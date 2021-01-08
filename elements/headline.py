@@ -54,8 +54,6 @@ def noheadline(  # pylint:disable=R0911
     True
     """
     line = line.strip()
-    if isheadline(line):
-        return False
     if issentence(line):
         # ignore extracted lists which are interpreted as headlines
         # TODO: CHECK THIS!
@@ -79,6 +77,8 @@ def noheadline(  # pylint:disable=R0911
     # \uF0B7
     if '' in line:
         return True
+    if isheadline(line):
+        return False
     return False
 
 
