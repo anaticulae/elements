@@ -9,6 +9,7 @@
 
 import os
 
+import elements.__patch__
 from elements.level import level_numbered
 
 __version__ = '0.0.0'
