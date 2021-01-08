@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.2
+
+### Fix
+
+* parse late to use other checks before (f7a15b08618b)
+
 ## v0.1.1
 
 ### Feature
