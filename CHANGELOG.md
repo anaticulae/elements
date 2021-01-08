@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.1
+
+### Feature
+
+* extend noheadline check (6e403bc2364e)
+
 ## v0.1.0
 
 ### Feature
