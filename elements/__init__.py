@@ -13,6 +13,9 @@ import elements.__patch__
 from elements.headline import isheadline
 from elements.headline import noheadline
 from elements.level import level_numbered
+from elements.pagenumber import validate_pageorder
+from elements.pagenumber import validate_toc
+from elements.toc import toc_flat
 
 __version__ = '0.2.1'
 
