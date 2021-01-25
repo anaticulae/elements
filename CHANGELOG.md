@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.3.1
+
+### Feature
+
+* extend public API (5caebae93d7c)
+
+### Documentation
+
+* Happy New Year! (791406b572f4)
+
 ## v0.3.0
 
 ### Feature
