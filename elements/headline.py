@@ -49,6 +49,7 @@ def noheadline(  # pylint:disable=R0911
         line: str,
         length_min: int = 5,
         wordcount_max: int = 15,
+        mean_words_length_min: float = 3.0,
         strict: bool = True,
 ) -> bool:
     """\
@@ -75,7 +76,7 @@ def noheadline(  # pylint:disable=R0911
         return True
     wordslength = [len(word) for word in line.split()]
     mean_words_length = statistics.mean(wordslength)
-    if mean_words_length <= 3.0:
+    if mean_words_length < mean_words_length:
         return True
     # \uF0B7
     if '' in line:
