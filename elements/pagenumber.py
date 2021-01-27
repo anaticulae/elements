@@ -37,6 +37,11 @@ class InvalidPage:
     raw_location: int = None
 
 
+@dataclasses.dataclass
+class InvalidRomanPageNumber(InvalidPage):
+    pass
+
+
 InvalidPages = typing.List[InvalidPage]
 
 
@@ -78,7 +83,18 @@ def validate_pageorder(items) -> InvalidPages:
                     ))
             arabic = current_arabic
         except ValueError:
-            current_roman = texmex.numbers.arabic(pagenumber)
+            try:
+                current_roman = texmex.numbers.arabic(pagenumber)
+            except KeyError:
+                # invalid roman number `ixx` correct is `xix`
+                result.append(
+                    InvalidRomanPageNumber(
+                        pagenumber,
+                        roman,
+                        title,
+                        raw_location=raw_location,
+                    ))
+                continue
             if current_roman < texmex.numbers.arabic(roman):
                 result.append(
                     InvalidPage(

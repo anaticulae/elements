@@ -15,6 +15,7 @@ from elements.headline import noheadline
 from elements.level import level_numbered
 from elements.pagenumber import InvalidPage
 from elements.pagenumber import InvalidPages
+from elements.pagenumber import InvalidRomanPageNumber
 from elements.pagenumber import validate_pageorder
 from elements.pagenumber import validate_toc
 from elements.toc import toc_flat
