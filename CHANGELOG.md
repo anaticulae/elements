@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.3.3
+
+### Feature
+
+* introduce invalid roman page numbers (1ce04c4679f8)
+
+### Fix
+
+* fix 988f3482e8e8b refactoring (6f760af9e62f)
+
 ## v0.3.2
 
 ### Feature

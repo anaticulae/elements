@@ -20,6 +20,6 @@ from elements.pagenumber import validate_pageorder
 from elements.pagenumber import validate_toc
 from elements.toc import toc_flat
 
-__version__ = '0.3.2'
+__version__ = '0.3.3'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
