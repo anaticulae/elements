@@ -6,6 +6,12 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
+"""\
+>>> level_numbered('a. Gesamtbewertung')
+4
+"""
+
+import re
 
 
 def level_numbered(raw: str) -> int:
@@ -31,6 +37,18 @@ def level_numbered(raw: str) -> int:
     raw = raw.strip()
     if not raw:
         return None
+
+    dots = level_numbered_dots(raw)
+    if dots is not None:
+        return dots
+
+    chars = level_numbered_chars(raw)
+    if chars is not None:
+        return chars
+    return None
+
+
+def level_numbered_dots(raw: str) -> int:
     raw = raw.split()[0]
     try:
         splitted = [int(item) for item in raw.split('.') if item]
@@ -39,3 +57,16 @@ def level_numbered(raw: str) -> int:
     except ValueError:
         return None
     return len(splitted)
+
+
+CHAR_PATTERN = re.compile(r'^[a-zA-Z]\.')
+
+
+def level_numbered_chars(raw: str) -> int:
+    """\
+    >>> level_numbered_chars('d. Gesamtbewertung')
+    4
+    """
+    if not CHAR_PATTERN.match(raw):
+        return None
+    return 4
