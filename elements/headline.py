@@ -90,6 +90,8 @@ def parse_headline(raw: str, before=None):  # pylint:disable=R0911
     """\
     >>> parse_headline('2. Einleitung')
     ('Einleitung', 1, '2.')
+    >>> parse_headline('b. Ergebnisse und Schlussfolgerungen zu Unterfrage 1')
+    ('Ergebnisse und Schlussfolgerungen zu Unterfrage 1', 4, 'b.')
     """
     parsed = parse_leveled_headline(raw)
     if parsed:
@@ -130,10 +132,25 @@ HEADLINE = re.compile(
     re.VERBOSE,
 )
 
+CHARACTER_HEADLINE = re.compile(
+    ('^'
+     r'(?P<level>([a-z]{1,2}\.)+[a-z\d]{0,2})'
+     r'[ ]{1,5}'
+     r'(?P<text>.+?)'
+     '$'),
+    re.VERBOSE | re.IGNORECASE,
+)
+
 
 def parse_leveled_headline(line):
     line = line.strip()
-    return re.match(HEADLINE, line)
+    matched = re.match(HEADLINE, line)
+    if matched:
+        return matched
+    matched = re.match(CHARACTER_HEADLINE, line)
+    if matched:
+        return matched
+    return None
 
 
 HEADLINE_CHAPTER = re.compile(
