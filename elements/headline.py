@@ -51,6 +51,7 @@ def noheadline(  # pylint:disable=R0911
         line: str,
         length_min: int = 5,
         wordcount_max: int = 15,
+        dots_max: int = 5,
         mean_words_length_min: float = 3.0,
         strict: bool = True,
 ) -> bool:
@@ -63,7 +64,7 @@ def noheadline(  # pylint:disable=R0911
         # ignore extracted lists which are interpreted as headlines
         # TODO: CHECK THIS!
         return True
-    if line.count('.') > 5:
+    if line.count('.') > dots_max:
         # filter table items
         # DISKUSSION ................ 36
         return True
