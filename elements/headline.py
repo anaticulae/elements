@@ -41,6 +41,8 @@ def isheadline(line: str, strict: bool = True) -> bool:
     if utila.similar(HEADLINES, line):
         return True
     if not strict and parse_headline(line):
+        if noheadline(line):
+            return False
         return True
     return False
 
