@@ -2,6 +2,15 @@
 
 Every noteable change is logged here.
 
+## v0.4.0
+
+### Feature
+
+* add parameter to change max dots in headline (20b48623584c)
+* use no headline check to improve headline parser (7df60e50036b)
+* add char headline pattern (73b5a8b4766e)
+* add level four char pattern (ca835c662363)
+
 ## v0.3.3
 
 ### Feature
