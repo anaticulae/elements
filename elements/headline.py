@@ -118,7 +118,7 @@ def parse_headline(raw: str, before=None):  # pylint:disable=R0911
     if before:
         # look back and check for `Kapitel-X-Pattern`
         before = plain(before)
-        chapter = noheadeline_pattern(before)
+        chapter = noheadline_pattern(before)
         if chapter:
             return raw, 1, ''
     if not utila.similar(HEADLINES, raw):
@@ -197,13 +197,13 @@ NOHEADLINE_APPENDIX = re.compile(
 )
 
 
-def noheadeline_pattern(item: str) -> bool:
+def noheadline_pattern(item: str) -> bool:
     """\
-    >>> noheadeline_pattern('KAPITEL  1 ')
+    >>> noheadline_pattern('KAPITEL  1 ')
     True
-    >>> noheadeline_pattern('Chapter 5 ')
+    >>> noheadline_pattern('Chapter 5 ')
     True
-    >>> noheadeline_pattern('ANHANG A')
+    >>> noheadline_pattern('ANHANG A')
     True
     """
     item = item.strip()
