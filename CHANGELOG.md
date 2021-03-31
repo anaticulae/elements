@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.4.2
+
+### Feature
+
+* add `Kapitel 1:`-pattern to leveled parser (f9f7b00cd157)
+
 ## v0.4.1
 
 ### Feature
