@@ -23,7 +23,6 @@ import typing
 
 import iamraw
 import iamraw.toc
-import texmex.numbers
 import utila
 
 import elements
@@ -84,7 +83,7 @@ def validate_pageorder(items) -> InvalidPages:
             arabic = current_arabic
         except ValueError:
             try:
-                current_roman = texmex.numbers.arabic(pagenumber)
+                current_roman = utila.arabic(pagenumber)
             except KeyError:
                 # invalid roman number `ixx` correct is `xix`
                 result.append(
@@ -95,7 +94,7 @@ def validate_pageorder(items) -> InvalidPages:
                         raw_location=raw_location,
                     ))
                 continue
-            if current_roman < texmex.numbers.arabic(roman):
+            if current_roman < utila.arabic(roman):
                 result.append(
                     InvalidPage(
                         pagenumber,
