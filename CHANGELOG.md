@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.5.2
+
+### Fix
+
+* swap arguments (078a50f518b7)
+
 ## v0.5.1
 
 ## v0.5.0
