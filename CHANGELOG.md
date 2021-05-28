@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.6.0
+
+### Feature
+
+* move method to verify page number (983870231c00)
+
 ## v0.5.2
 
 ### Fix
