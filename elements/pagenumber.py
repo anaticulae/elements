@@ -127,9 +127,10 @@ def ispagenumber(number: str) -> bool:
     >>> ispagenumber('0.5')
     False
     """
-    number = number.strip()
     # - 1 -, -2-,
     number = str(number).replace('-', '', 2)
+    # strip after to remove trailling white spaces produce by replace
+    number = number.strip()
     if not number:
         return False
     if number.isnumeric():
