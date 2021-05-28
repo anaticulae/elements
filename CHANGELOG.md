@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.6.1
+
+### Fix
+
+* strip after replacing (4cfeef80ad68)
+
 ## v0.6.0
 
 ### Feature
