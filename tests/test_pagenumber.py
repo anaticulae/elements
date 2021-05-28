@@ -7,6 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import pytest
+
 import elements
 
 
@@ -27,3 +29,8 @@ def test_invalid_roman_number():
         )
     ]
     assert validated == expected
+
+
+@pytest.mark.parametrize('nopagenumber', ['', 'a'])
+def test_ispagenumber_negative(nopagenumber):
+    assert not elements.ispagenumber(nopagenumber)
