@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.0
+
+### Feature
+
+* extend headline list (288b048dbba8)
+
 ## v0.6.1
 
 ### Fix
