@@ -14,7 +14,7 @@ import utila
 
 import elements
 
-HEADLINES = """\
+HEADLINES = utila.splitlines("""\
 Anhang
 Anhangsverzeichnis
 Bibliografie
@@ -26,8 +26,8 @@ Internetquellen
 Literaturverzeichnis
 Quellenverzeichnis
 Vorwort
-Zeitschriftenartikel"""
-HEADLINES = utila.splitlines(HEADLINES)  # pylint:disable=R0204
+Zeitschriftenartikel
+""")
 
 
 def isheadline(line: str, strict: bool = True) -> bool:
