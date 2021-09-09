@@ -156,7 +156,7 @@ def parse_headline(raw: str, before=None):  # pylint:disable=R0911
         return raw, 1, ''
     if before:
         # look back and check for `Kapitel-X-Pattern`
-        before = plain(before)
+        before = utila.normalize_text(before, normalize_spaces=True)
         chapter = noheadline_pattern(before)
         if chapter:
             return raw, 1, ''
@@ -253,12 +253,6 @@ def noheadline_pattern(item: str) -> bool:
     if NOHEADLINE_APPENDIX.match(item):
         return True
     return False
-
-
-def plain(items: list) -> str:
-    # TODO: REPLACE WITH UTILA CODE
-    raw = ' '.join([item.text.strip() for item in items])
-    return raw
 
 
 def issentence(line: str):
