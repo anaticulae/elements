@@ -244,6 +244,8 @@ def noheadline_pattern(item: str) -> bool:
     True
     >>> noheadline_pattern('ANHANG A')
     True
+    >>> noheadline_pattern('KAPITEL 1: EINLEITUNG')
+    False
     """
     item = item.strip()
     if NOHEADLINE_CHAPTER.match(item):
