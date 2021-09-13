@@ -18,6 +18,8 @@ def iscaption(text: str) -> bool:
     text = text.strip()
     if iscaption_figure(text):
         return True
+    if iscaption_code(text):
+        return True
     return False
 
 
@@ -41,5 +43,28 @@ def iscaption_figure(text: str) -> bool:
     """
     text = text.strip()
     if FIGURE.match(text):
+        return True
+    return False
+
+
+LISTING = re.compile(
+    r"""^
+    Listing
+    [ ]{0,3}
+    (\d{1,2}.\d{1,2}.?|)
+    [ ]{0,3}
+    :?
+    """,
+    re.X | re.I,
+)
+
+
+def iscaption_code(text: str) -> bool:
+    """\
+    >>> iscaption_code('Listing3.1:Bewertung von Tweets')
+    True
+    """
+    text = text.strip()
+    if LISTING.match(text):
         return True
     return False

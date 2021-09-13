@@ -11,6 +11,7 @@ import os
 
 import elements.__patch__
 from elements.caption import iscaption
+from elements.caption import iscaption_code
 from elements.caption import iscaption_figure
 from elements.headline import isheadline
 from elements.headline import noheadline
