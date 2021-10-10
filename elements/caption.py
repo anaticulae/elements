@@ -9,6 +9,31 @@
 
 import re
 
+import utila
+
+PATTERN = r"""
+    ^
+    (%s)
+    [ ]{0,3}
+    (
+        \d{1,2}\.?(\d{1,2}.?)?|
+        [A-Z]
+    )
+    [ ]{0,3}
+    :?
+    .{0,50}
+    $
+"""
+
+
+def compiles(caption: str):
+    pattern = PATTERN % caption
+    result = re.compile(
+        pattern,
+        flags=utila.NOCASE_VERBOSE,
+    )
+    return result
+
 
 def iscaption(text: str) -> bool:
     """\
@@ -23,20 +48,7 @@ def iscaption(text: str) -> bool:
     return False
 
 
-FIGURE = re.compile(
-    r"""^
-    (Abb.?|Abbildung|Fig.?|Figure)
-    [ ]{0,3}
-    (
-        \d{1,2}\.?(\d{1,2}.?)?|
-        [A-Z]
-    )
-    [ ]{0,3}
-    :?
-    .{0,50}$
-""",
-    re.X | re.I,
-)
+FIGURE = compiles(r'Abb.?|Abbildung|Fig.?|Figure')
 
 
 def iscaption_figure(text: str) -> bool:
@@ -52,16 +64,7 @@ def iscaption_figure(text: str) -> bool:
     return False
 
 
-LISTING = re.compile(
-    r"""^
-    Listing
-    [ ]{0,3}
-    (\d{1,2}.\d{1,2}.?|)
-    [ ]{0,3}
-    :?
-    """,
-    re.X | re.I,
-)
+LISTING = compiles(r'Listing')
 
 
 def iscaption_code(text: str) -> bool:
