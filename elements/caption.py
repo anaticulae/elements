@@ -27,7 +27,10 @@ FIGURE = re.compile(
     r"""^
     (Abb.?|Abbildung|Fig.?|Figure)
     [ ]{0,3}
-    (\d{1,2}.\d{1,2}.?|)
+    (
+        \d{1,2}\.?(\d{1,2}.?)?|
+        [A-Z]
+    )
     [ ]{0,3}
     :?
     .{0,50}$
@@ -39,6 +42,8 @@ FIGURE = re.compile(
 def iscaption_figure(text: str) -> bool:
     """\
     >>> iscaption_figure('Abbildung11.1 Entwicklungsstand der Proﬁle')
+    True
+    >>> iscaption_figure('Figure1 : Valence and arousal describe emotions')
     True
     """
     text = text.strip()
