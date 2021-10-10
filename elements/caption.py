@@ -37,7 +37,8 @@ def compiles(caption: str):
 
 CAPTIONS = r"""
 Abb.?|Abbildung|Fig.?|Figure|
-Listing
+Listing|
+Tab.?|Tabelle|Table
 """
 
 CAPTIONX = compiles(CAPTIONS)
@@ -80,5 +81,19 @@ def iscaption_code(text: str) -> bool:
     """
     text = text.strip()
     if LISTINGX.match(text):
+        return True
+    return False
+
+
+TABLEX = compiles(r'Tab.?|Tabelle|Table')
+
+
+def iscaption_table(text: str) -> bool:
+    """\
+    >>> iscaption_table('Tab. 3: Mittelwerte und Standardabweichungen')
+    True
+    """
+    text = text.strip()
+    if TABLEX.match(text):
         return True
     return False
