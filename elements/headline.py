@@ -92,7 +92,7 @@ def isheadline(line: str, strict: bool = True) -> bool:
     return False
 
 
-def noheadline(  # pylint:disable=R0911
+def noheadline(  # pylint:disable=R0911,R1260
     line: str,
     length_min: int = 5,
     wordcount_max: int = 15,
@@ -104,6 +104,8 @@ def noheadline(  # pylint:disable=R0911
     >>> noheadline(' Anzahl der Transaktionen')
     True
     >>> noheadline('• count')
+    True
+    >>> noheadline('u.u.a 10')
     True
     """
     line = line.strip()
@@ -134,6 +136,11 @@ def noheadline(  # pylint:disable=R0911
     if line[0] == '•':
         # just a list
         return True
+    parsed = parse_headline(line)
+    if parsed:
+        # title
+        if utila.char_rate(parsed[0]) < 0.5:
+            return True
     if isheadline(line, strict=strict):
         return False
     return False
