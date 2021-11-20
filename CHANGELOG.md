@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.10.3
+
+### Feature
+
+* skip list item as possible headline (862e7c5a3423)
+* extend headlines list (b10317267a49)
+
 ## v0.10.2
 
 ### Fix
