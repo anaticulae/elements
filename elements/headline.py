@@ -75,6 +75,7 @@ ZUSAMMENFASSUNG UND AUSBLICK
 """)
 
 
+@utila.cacheme
 def isheadline(line: str, strict: bool = True) -> bool:
     """\
     >>> isheadline('1. Einleitung', strict=False)
@@ -92,6 +93,7 @@ def isheadline(line: str, strict: bool = True) -> bool:
     return False
 
 
+@utila.cacheme
 def noheadline(  # pylint:disable=R0911,R1260
     line: str,
     length_min: int = 5,
@@ -146,6 +148,7 @@ def noheadline(  # pylint:disable=R0911,R1260
     return False
 
 
+@utila.cacheme
 def parse_headline(raw: str, before=None):  # pylint:disable=R0911
     """\
     >>> parse_headline('2. Einleitung')
@@ -202,6 +205,7 @@ CHARACTER_HEADLINE = re.compile(
 )
 
 
+@utila.cacheme
 def parse_leveled_headline(line):
     line = line.strip()
     matched = re.match(HEADLINE, line)
@@ -230,6 +234,7 @@ HEADLINE_CHAPTER = re.compile(
 )
 
 
+@utila.cacheme
 def parse_chapter_level(raw: str) -> tuple:
     """\
     >>> parse_chapter_level('KAPITEL 1: EINLEITUNG')
@@ -254,6 +259,7 @@ NOHEADLINE_APPENDIX = re.compile(
 )
 
 
+@utila.cacheme
 def noheadline_pattern(item: str) -> bool:
     """\
     >>> noheadline_pattern('KAPITEL  1 ')
