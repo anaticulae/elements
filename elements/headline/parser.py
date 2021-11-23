@@ -17,7 +17,7 @@ import elements.headline.lookup
 
 
 @utila.cacheme
-def parse_headline(raw: str, before=None):  # pylint:disable=R0911
+def parse_headline(raw: str, before=None) -> tuple:
     """\
     >>> parse_headline('2. Einleitung')
     ('Einleitung', 1, '2.')
@@ -38,7 +38,7 @@ def parse_headline(raw: str, before=None):  # pylint:disable=R0911
     parsed = parse_chapter_level(raw)
     if parsed:
         title, rawlevel = parsed
-        level = 1  # pylint:disable=R0204
+        level = 1
         if 'anhang' in rawlevel.lower():
             # ANHANG
             #   ANHANG 1: ZUSAMMENFASSUNG
