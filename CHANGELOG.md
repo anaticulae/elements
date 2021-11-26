@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.11.1
+
+### Fix
+
+* make level pattern less strict (359910954823)
+
 ## v0.11.0
 
 ### Feature
