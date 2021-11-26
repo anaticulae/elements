@@ -49,7 +49,7 @@ def level_numbered_dots(raw: str) -> int:
 
 
 CHAR_PATTERN = re.compile(r'^[A-Z]\.', re.IGNORECASE)
-APPENDIX_PATTERN = re.compile(r'^[A-Z]\.\d{1,2}\.', re.IGNORECASE)
+APPENDIX_PATTERN = re.compile(r'^[A-Z]\.\d{1,2}\.?', re.IGNORECASE)
 
 
 def level_numbered_chars(raw: str) -> int:
@@ -57,6 +57,8 @@ def level_numbered_chars(raw: str) -> int:
     >>> level_numbered_chars('d. Gesamtbewertung')
     4
     >>> level_numbered_chars('A.10.Vorgehen S-Funktionen')
+    2
+    >>> level_numbered_chars('A.1 Parameter')
     2
     """
     if not CHAR_PATTERN.match(raw):
