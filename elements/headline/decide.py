@@ -127,13 +127,15 @@ def singlechar(text: str) -> bool:
     True
     >>> singlechar('  ')
     False
+    >>> singlechar('2 background 9')
+    False
     """
     if not text:
         return False
     splitted = [len(token) for token in text.strip().split()]
     if not splitted:
         return False
-    median = statistics.median(splitted)
+    median = statistics.mean(splitted)
     if median == 1:
         return True
     return False
