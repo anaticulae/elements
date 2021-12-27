@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.11.2
+
+### Fix
+
+* do not handle single char headlines as no headline (76a05bd6a57f)
+
 ## v0.11.1
 
 ### Fix
