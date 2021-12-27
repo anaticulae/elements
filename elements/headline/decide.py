@@ -56,6 +56,8 @@ def noheadline(  # pylint:disable=R0911,R1260
     True
     >>> noheadline('A B S T R A C T')
     False
+    >>> noheadline('2 background 9')
+    True
     """
     line = line.strip()
     if issentence(line):
@@ -85,6 +87,8 @@ def noheadline(  # pylint:disable=R0911,R1260
     mean_words_length = statistics.mean(wordslength)
     if mean_words_length < mean_words_length_min:
         return True
+    if TOCLINE.match(line):
+        return True
     parsed = elements.headline.parser.parse_headline(line)
     if parsed:
         # title
@@ -95,6 +99,8 @@ def noheadline(  # pylint:disable=R0911,R1260
     return False
 
 
+# 2 background          9
+TOCLINE = utila.compiles(r'^\d{1,2}.{3,}\d{1,3}$')
 # \uF0B7
 LISTSTART = '•'
 WHITELINE = '          '
