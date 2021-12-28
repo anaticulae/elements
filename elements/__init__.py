@@ -26,6 +26,7 @@ from elements.pagenumber import InvalidRomanPageNumber
 from elements.pagenumber import ispagenumber
 from elements.pagenumber import validate_pageorder
 from elements.pagenumber import validate_toc
+from elements.quote import isquote
 from elements.toc import istoc
 from elements.toc import toc_flat
 
