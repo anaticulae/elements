@@ -139,4 +139,24 @@ def ispagenumber(number: str) -> bool:
         return True
     if re.match(r'\d{1,3}/\d{1,3}', number):
         return True
+    if isnumber_withgaps(number):
+        return True
+    return False
+
+
+def isnumber_withgaps(text: str, maxgaps: int = 1) -> bool:
+    """\
+    >>> isnumber_withgaps('11 4')
+    True
+    >>> isnumber_withgaps('1337')
+    True
+    """
+    text = text.strip()
+    if not text:
+        return False
+    if text.count(' ') > maxgaps:
+        return False
+    text = text.replace(' ', '')
+    if text.isnumeric():
+        return True
     return False
