@@ -19,6 +19,7 @@ from elements.headline.decide import noheadline
 from elements.headline.decide import noheadline_pattern
 from elements.headline.decide import singlechar
 from elements.headline.level import level_numbered
+from elements.headline.level import level_steps
 from elements.headline.lookup import HEADLINES
 from elements.pagenumber import InvalidPage
 from elements.pagenumber import InvalidPages
