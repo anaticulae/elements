@@ -9,7 +9,10 @@
 
 import re
 
+import utila
 
+
+@utila.cacheme
 def level_numbered(raw: str) -> int:
     """Convert number to raw level.
 
@@ -37,6 +40,7 @@ def level_numbered(raw: str) -> int:
     return None
 
 
+@utila.cacheme
 def level_steps(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
