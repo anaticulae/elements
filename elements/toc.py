@@ -52,7 +52,7 @@ def istoc(headline: str) -> bool:
     return False
 
 
-TOC_NUMBERED_MIN = configo.HV_FLOAT_PLUS(default=0.8)
+TOC_NUMBERED_MIN = configo.HV_FLOAT_PLUS(default=0.7)
 
 
 def istocnumbered(toc, rate_min: float = TOC_NUMBERED_MIN) -> bool:
