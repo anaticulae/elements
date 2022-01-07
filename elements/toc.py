@@ -9,6 +9,7 @@
 
 import collections
 
+import configo
 import iamraw
 import iamraw.toc
 import utila
@@ -51,7 +52,10 @@ def istoc(headline: str) -> bool:
     return False
 
 
-def istocnumbered(toc, rate_min: float = 0.8) -> bool:  # HOLY VALUE
+TOC_NUMBERED_MIN = configo.HV_FLOAT_PLUS(default=0.8)
+
+
+def istocnumbered(toc, rate_min: float = TOC_NUMBERED_MIN) -> bool:
     """Decide if a toc contains headlines with numbered or steps pattern."""
     if not toc:
         return True
