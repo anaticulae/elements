@@ -33,6 +33,6 @@ from elements.toc import istoc
 from elements.toc import istocnumbered
 from elements.toc import toc_flat
 
-__version__ = '0.13.0'
+__version__ = '0.13.1'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

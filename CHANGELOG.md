@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.13.1
+
+### Feature
+
+* reduce required rate (856ee2839fef)
+* make toc check changeable from outside (53f8cc0b7a27)
+
 ## v0.13.0
 
 ### Feature
