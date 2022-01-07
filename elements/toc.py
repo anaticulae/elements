@@ -51,7 +51,7 @@ def istoc(headline: str) -> bool:
     return False
 
 
-def istocnumbered(toc) -> bool:
+def istocnumbered(toc, rate_min: float = 0.8) -> bool:  # HOLY VALUE
     """Decide if a toc contains headlines with numbered or steps pattern."""
     if not toc:
         return True
@@ -60,6 +60,6 @@ def istocnumbered(toc) -> bool:
         elements.headline.level.level_numbered_dots(item.level)
     ])
     rate = levels / len(toc)
-    if rate < 0.8:  # TODO: HOLY VALUE
+    if rate < rate_min:
         return False
     return True
