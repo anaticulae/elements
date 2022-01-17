@@ -52,10 +52,21 @@ def istoc(headline: str) -> bool:
     return False
 
 
-TOC_NUMBERED_MIN = configo.HV_FLOAT_PLUS(default=0.7)
+TOC_NUMBERED_MIN = configo.HolyRate(items=(
+    (1, 1),
+    (5, 3),
+    (8, 4),
+    (10, 5),
+    (15, 10),
+    (20, 15),
+    (30, 22),
+    (40, 30),
+    (50, 40),
+    (60, 50),
+))
 
 
-def istocnumbered(toc, rate_min: float = TOC_NUMBERED_MIN) -> bool:
+def istocnumbered(toc, rate_min: callable = TOC_NUMBERED_MIN) -> bool:
     """Decide if a toc contains headlines with numbered or steps pattern."""
     if not toc:
         return True
@@ -63,6 +74,7 @@ def istocnumbered(toc, rate_min: float = TOC_NUMBERED_MIN) -> bool:
         item for item in toc if item.level and
         elements.headline.level.level_numbered_dots(item.level)
     ])
+    rate_min: float = rate_min(len(toc))
     rate = levels / len(toc)
     if rate < rate_min:
         return False
