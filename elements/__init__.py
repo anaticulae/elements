@@ -30,8 +30,12 @@ from elements.pagenumber import validate_pageorder
 from elements.pagenumber import validate_toc
 from elements.quote import isquote
 from elements.toc import istoc
+from elements.toc import istocnolevel
 from elements.toc import istocnumbered
+from elements.toc import istocsections
+from elements.toc import istocstepped
 from elements.toc import toc_flat
+from elements.toc import toc_style
 
 __version__ = '0.14.0'
 

@@ -8,6 +8,7 @@
 # =============================================================================
 
 import collections
+import re
 
 import configo
 import iamraw
@@ -52,6 +53,26 @@ def istoc(headline: str) -> bool:
     return False
 
 
+def toc_style(
+    toc: iamraw.TocLinkMixin,
+    toc_length_min: int = 8,
+) -> iamraw.TocStyle:
+    """\
+    >>> assert toc_style(iamraw.Toc()) is None
+    """
+    if not toc:
+        return None
+    if len(toc) < toc_length_min:
+        return iamraw.TocStyle.NUMBERED
+    if istocsections(toc):
+        return iamraw.TocStyle.SECTIONED
+    if istocstepped(toc):
+        return iamraw.TocStyle.STEPPED
+    if istocnolevel(toc):
+        return iamraw.TocStyle.FIRSTLEVEL_ONLY
+    return iamraw.TocStyle.NUMBERED
+
+
 TOC_NUMBERED_MIN = configo.HolyRate(items=(
     (1, 1),
     (5, 3),
@@ -77,5 +98,115 @@ def istocnumbered(toc, rate_min: callable = TOC_NUMBERED_MIN) -> bool:
     rate_min: float = rate_min(len(toc))
     rate = levels / len(toc)
     if rate < rate_min:
+        return False
+    return True
+
+
+def istocnolevel(toc) -> bool:
+    if not toc:
+        return False
+    levels = len([item for item in toc if item.level is None])
+    rate = levels / len(toc)
+    if rate < 0.65:  # TODO: HOLY VALUE
+        return False
+    return True
+
+
+LEVEL_SECTIONS_SECTION = utila.compiles(r'^(SECTION)[ ]{1,3}\d{1,2}\:')
+LEVEL_SECTIONS_PART = utila.compiles(r'^(PART)[ ]{1,3}\d{1,2}\:')
+
+
+@utila.cacheme
+def level_sections(raw: str) -> int:  # pylint:disable=R0911
+    """Convert number to raw level.
+
+    Example:
+
+        Section 3: Data
+        Section 4: Methodology
+        Section 5: Results
+            Part 1: Time series analysis
+            Part 2: Looking for pair-wise cointegration
+                Cointegrating pairs
+
+    >>> level_sections('Section 1: Introduction')
+    1
+    >>> level_sections('Part 3:Was ist Sicherheit?')
+    2
+    >>> level_sections('Umwelt und Klimawandel')
+    3
+    """
+    raw = raw.strip() if raw else None
+    if not raw:
+        return 3
+    if LEVEL_SECTIONS_SECTION.match(raw):
+        return 1
+    if LEVEL_SECTIONS_PART.match(raw):
+        return 2
+    return 3
+
+
+def istocsections(toc) -> bool:
+    """Decide if a toc contains headlines with numbered or steps pattern."""
+    if not toc:
+        return False
+    levels = len([
+        item for item in toc
+        if item.level and level_sections(item.level) in (1, 2)
+    ])
+    rate = levels / len(toc)
+    if rate < 0.65:  # TODO: HOLY VALUE
+        return False
+    return True
+
+
+@utila.cacheme
+def level_steps(raw: str) -> int:  # pylint:disable=R0911
+    """Convert number to raw level.
+
+    Example:
+        A Lateinische Buchstaben
+            I. Roman numbers
+                1. Arabische Zahlen
+                    a. Lateinische Kleinbuchstaben
+
+    >>> level_steps('KAPITEL 1 WAS IST HUMAN SECURITY?')
+    1
+    >>> level_steps('A. Was ist Sicherheit?')
+    2
+    >>> level_steps('III. Umwelt und Klimawandel')
+    3
+    >>> level_steps('2. Politische und wenige(r) rechtliche Aspekte')
+    4
+    >>> level_steps('a) Konzepte')
+    5
+    >>> level_steps('dd) Bewertung')
+    6
+    """
+    raw = raw.strip() if raw else None
+    if not raw:
+        return 1
+    if re.match(r'^(KAPITEL)[ ]{1,3}\d{1,2}', raw, re.IGNORECASE):
+        return 1
+    if re.match(r'^(A|B|C|D|E|F|G|H)\.', raw, re.IGNORECASE):
+        return 2
+    if re.match(r'^(I|II|III|IIII|IV|V|VI|VII|VIII)\.?', raw, re.IGNORECASE):
+        return 3
+    if re.match(r'^\d{1,2}\.', raw, re.IGNORECASE):
+        return 4
+    if re.match(r'^[a-h]\)', raw, re.IGNORECASE):
+        return 5
+    if re.match(r'^[a-h]{2}\)', raw, re.IGNORECASE):
+        return 6
+    return None
+
+
+def istocstepped(toc) -> bool:
+    """Decide if a toc contains headlines with numbered or steps pattern."""
+    if not toc:
+        return False
+    levels = len([item for item in toc if level_steps(item.level)])
+    rate = levels / len(toc)
+    if rate < 0.65:  # TODO: HOLY VALUE
         return False
     return True
