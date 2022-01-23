@@ -57,10 +57,15 @@ def noheadline(  # pylint:disable=R0911,R1260
     True
     >>> noheadline('A B S T R A C T')
     False
-    >>> noheadline('2 background 9')
-    True
     >>> noheadline('[77] Alexander Keller. Methods and Apparatus for Topology Discovery')
     True
+
+    # TODO: THATS CONFUSING, THINK ABOUT SOLVING THIS ISSUE
+    # IS WITHOUT SPACES TO STRICT?
+    >>> noheadline('2 background 9') # tocline
+    True
+    >>> noheadline('2  Methode3') # highnote
+    False
     """
     line = line.strip()
     if len(line) < length_min:
@@ -113,7 +118,7 @@ def noheadline_simple(line: str) -> bool:
 
 
 # 2 background          9
-TOCLINE = utila.compiles(r'^\d{1,2}.{3,}\d{1,3}$')
+TOCLINE = utila.compiles(r'^\d{1,2}.{3,}[ ]{1,}\d{1,3}$')
 # [77] Alexander Keller. Methods and Apparatus for Topology Discovery
 BIBLINE = utila.compiles(r'^\[\s{0,2}\d{1,3}\s{0,2}\]')
 # \uF0B7
