@@ -2,6 +2,31 @@
 
 Every noteable change is logged here.
 
+## v0.16.0
+
+### Feature
+
+* extend headline list (9ad1c6ea726e)
+* extend headline list (a3b512d2ba18)
+* extend noheadline detector (58269c2a72d3)
+* extend headline list (4a1985d09f68)
+* extend list of headlines (f4085fbaef55)
+* add `graph` as valid caption (bb995cbd178f)
+* add headlines to public API (2e94d639b784)
+
+### Fix
+
+* return none instead of failing (9b4a7640f17f)
+* do not treat headline with high number as toc line (464693f67a28)
+* do not skip empty level as first one (1e3b5df4c20e)
+* improve stepped parser (22a67f5300ac)
+* flatten tocs to work on tocs directly (286c03d37fb7)
+* enable grouping non iterable items (ff0ca871897f)
+
+### Documentation
+
+* fix modules path (1810213ada88)
+
 ## v0.15.0
 
 ### Feature
