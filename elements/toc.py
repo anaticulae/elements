@@ -90,7 +90,7 @@ TOC_NUMBERED_MIN = configo.HolyRate(items=(
 
 
 def istocnumbered(toc, rate_min: callable = TOC_NUMBERED_MIN) -> bool:
-    """Decide if a toc contains headlines with numbered or steps pattern."""
+    """Decide if a toc contains headlines with numbered pattern."""
     if not toc:
         return True
     toc = toc_flat(toc)
@@ -151,7 +151,7 @@ def level_sections(raw: str) -> int:  # pylint:disable=R0911
 
 
 def istocsections(toc) -> bool:
-    """Decide if a toc contains headlines with numbered or steps pattern."""
+    """Decide if a toc contains headlines with sections pattern."""
     if not toc:
         return False
     toc = toc_flat(toc)
@@ -211,7 +211,7 @@ STEPS_ROMAN = utila.compiles(r'^(I|II|III|IIII|IV|V|VI|VII|VIII|VIII)\.?')
 
 
 def istocstepped(toc) -> bool:
-    """Decide if a toc contains headlines with numbered or steps pattern."""
+    """Decide if a toc contains headlines with stepped pattern."""
     if not toc:
         return False
     toc = toc_flat(toc)
