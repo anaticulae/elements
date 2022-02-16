@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.16.2
+
+### Feature
+
+* extend public API (141a2b3e4624)
+
+### Documentation
+
+* adjust method documentation (ba1f42997c80)
+
 ## v0.16.1
 
 ### Feature
