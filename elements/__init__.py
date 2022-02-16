@@ -36,6 +36,9 @@ from elements.headline.lookup import TABLETABLE
 from elements.headline.lookup import TOC
 from elements.headline.lookup import UTILS
 from elements.headline.lookup import VITAE
+from elements.headline.parser import parse_chapter_level
+from elements.headline.parser import parse_headline
+from elements.headline.parser import parse_leveled_headline
 from elements.pagenumber import InvalidPage
 from elements.pagenumber import InvalidPages
 from elements.pagenumber import InvalidRomanPageNumber
