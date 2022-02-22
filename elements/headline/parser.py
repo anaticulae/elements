@@ -85,7 +85,7 @@ def parse_chapter_level(raw: str) -> tuple:
 
 HEADLINE = utila.compiles(r"""
     ^
-    (?P<level>(\d{1,2}\.?)+\d{0,2})
+    (?P<level>(\d{1,2}\.?){1,4}\d{0,2})
     [ ]{1,5}
     (?P<text>.+?)
     $
@@ -93,7 +93,7 @@ HEADLINE = utila.compiles(r"""
 
 CHARACTER_HEADLINE = utila.compiles(r"""
     ^
-    (?P<level>([a-z]{1,2}\.)+[a-z\d]{0,2})
+    (?P<level>([a-z]{1,2}\.){1,4}[a-z\d]{0,2})
     [ ]{1,5}
     (?P<text>.+?)
     $

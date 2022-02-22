@@ -24,3 +24,15 @@ Abbildung 1.3.: Impulsfolgegruppe besteht aus drei Impulsfolgen
 def test_no_headline(headline):
     isheadline = elements.isheadline(headline, strict=False)
     assert not isheadline, headline
+
+
+@pytest.mark.timeout(2)
+def test_parse_leveled_headline_numbers_timeout():
+    longrun = '356891013151618192023252628293031323312471112141721222427'
+    assert not elements.parse_leveled_headline(longrun)
+
+
+@pytest.mark.timeout(2)
+def test_parse_leveled_headline_chars_timeout():
+    longrun = 'ahsdkfhakhdkfhasdkfhakshdfkjasdhdfkshaskhdkhafsdkh'
+    assert not elements.parse_leveled_headline(longrun)
