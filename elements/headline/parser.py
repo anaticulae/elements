@@ -109,5 +109,5 @@ HEADLINE_CHAPTER = utila.compiles(r"""
     \:
     )
     [ ]{0,5}
-    (?P<title>.+)
+    (?P<title>.+)       # TODO: CHECK LAZY `?` OF HEADLINES BEFORE
 """)
