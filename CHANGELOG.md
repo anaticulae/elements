@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.16.3
+
+### Fix
+
+* make regex robust vs timing problems (bb6450d42971)
+
 ## v0.16.2
 
 ### Feature
