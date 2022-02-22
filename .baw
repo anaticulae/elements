@@ -1,3 +1,6 @@
 [project]
 short = elements
 name = check mich
+
+[test]
+plugins = timeout
