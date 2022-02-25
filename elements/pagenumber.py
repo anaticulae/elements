@@ -66,6 +66,9 @@ def validate_pageorder(items) -> InvalidPages:
     arabic = 0
     roman = 'I'
     for pagenumber, title, raw_location in items:
+        if pagenumber is None:
+            utila.error(f'missing {pagenumber} {title} {raw_location}')
+            continue
         if raw_location is None:
             utila.error(f'no `raw_location` for toc: `{title}`')
             raw_location = 0  # TODO: REMOVE LATER
