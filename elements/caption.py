@@ -111,6 +111,8 @@ def iscaption_table(text: str) -> bool:
     True
     >>> iscaption_table('Tab.4.2.: Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
     True
+    >>> iscaption_table('TabelleA.1.: Konﬁguration Simulink Modell')
+    True
     """
     text = text_limit(text)
     if TABLEX.match(text):
