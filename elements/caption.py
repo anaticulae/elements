@@ -58,6 +58,8 @@ def iscaption(text: str) -> bool:
     True
     >>> iscaption('Tab. 4.2.: Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
     True
+    >>> iscaption('Graph6:scenario 1: fast developing private e-currency.')
+    True
     """
     text = text_limit(text)
     matched = CAPTIONX.match(text)
