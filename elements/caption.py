@@ -16,6 +16,7 @@ PATTERN = r"""
     (%s)
     [ ]{0,3}
     (
+        \d{1,2}\-\d{1,2}|
         \d{1,2}\.?(\d{1,2}\.?)?|
         [A-Z]
     )
@@ -59,6 +60,8 @@ def iscaption(text: str) -> bool:
     >>> iscaption('Tab. 4.2.: Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
     True
     >>> iscaption('Graph6:scenario 1: fast developing private e-currency.')
+    True
+    >>> iscaption('Abbildung 7-22: Vergleich der Massen und Volumina zwischen einem')
     True
     """
     text = text_limit(text)
