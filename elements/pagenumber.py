@@ -19,7 +19,6 @@ relict of old times. Arabic numbers are used for the whole document.
 """
 
 import dataclasses
-import re
 import typing
 
 import iamraw
@@ -143,11 +142,14 @@ def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
         return True
     if utila.isroman(number):
         return True
-    if re.match(r'\d{1,3}/\d{1,3}', number):
+    if SEPARATED_PAGENUMBERS.match(number):
         return True
     if isnumber_withgaps(number):
         return True
     return False
+
+
+SEPARATED_PAGENUMBERS = utila.compiles(r'^\d{1,3}/\d{1,3}')
 
 
 def isnumber_withgaps(text: str, maxgaps: int = 1) -> bool:
