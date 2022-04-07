@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.17.2
+
+### Feature
+
+* extend headlines (702bcb45127d)
+
+### Fix
+
+* adjust appendix headline level (7f52f4082a42)
+
 ## v0.17.1
 
 ### Feature
