@@ -104,7 +104,7 @@ HEADLINE_CHAPTER = utila.compiles(r"""
     (?P<rawlevel>
         (KAPITEL|CHAPTER|ANHANG|APPENDIX)
         [ ]{0,5}
-        \d{1,2}
+        (1?\d)      # 0-19  # TODO: MAY INCREASE TO 0-29?
     [ ]{0,5}
     \:
     )
