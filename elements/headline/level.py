@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import contextlib
 import re
 
 import utila
@@ -144,3 +145,45 @@ def level_chapters(raw: str) -> int:
     if not CHAPTER_PATTERN.match(raw):
         return None
     return 1
+
+
+CHAPTER = utila.compiles(r"""
+    ^
+    (KAPITEL|CHAPTER)
+    [ ]{0,3}
+    (\d{1,2})
+""")
+
+
+def determine_patch(raw: str) -> int:
+    """\
+    >>> determine_patch('1.4.2')
+    2
+    >>> determine_patch('1.0.')
+    0
+    >>> determine_patch('1.')
+    1
+    >>> determine_patch('b.')
+    2
+    >>> determine_patch('c.')
+    3
+    >>> determine_patch('d.')
+    4
+    >>> determine_patch('Kapitel 6:')
+    6
+    >>> determine_patch('CHAPTER 8:')
+    8
+    """
+    if not raw:
+        return None
+    if matched := CHAPTER.match(raw):
+        return int(matched[2])
+    splitted = [item for item in raw.rsplit('.') if item]
+    if not splitted:
+        return None
+    with contextlib.suppress(ValueError):
+        last = splitted[-1]
+        for index, char in enumerate('abcdefgh', start=1):
+            last = last.replace(char, str(index))
+        return int(last)
+    return 0

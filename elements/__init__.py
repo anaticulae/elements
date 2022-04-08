@@ -18,6 +18,7 @@ from elements.headline.decide import isheadline
 from elements.headline.decide import noheadline
 from elements.headline.decide import noheadline_pattern
 from elements.headline.decide import singlechar
+from elements.headline.level import determine_patch
 from elements.headline.level import level_numbered
 from elements.headline.level import level_steps
 from elements.headline.lookup import ABBREVIATION
