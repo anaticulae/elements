@@ -61,6 +61,8 @@ def noheadline(  # pylint:disable=R0911,R1260
     True
     >>> noheadline('risk_total_kons = b0 + b1   sex + b2   age + b3    v_total_r')
     True
+    >>> noheadline('z.B.  sogenannte  "Patentboxen"  gegenüber')
+    True
 
     # TODO: THATS CONFUSING, THINK ABOUT SOLVING THIS ISSUE
     # IS WITHOUT SPACES TO STRICT?
@@ -112,6 +114,8 @@ def noheadline_simple(line: str) -> bool:  # pylint:disable=R0911
         return True
     if singlechar(line):
         return False
+    if ABBR_START.match(line):
+        return True
     if WHITELINE in line:
         # POTENZIALBESCHREIBUNG                 114
         # Do not count spaces to avoid ignoring `long` headlines
@@ -147,6 +151,19 @@ BIBLINE = utila.compiles(r'^\[\s{0,2}(\d{1,3}|[\w\d\.]{1,6})\s{0,2}\]')
 # \uF0B7
 LISTSTART = '•'
 WHITELINE = '          '
+ABBR_START = utila.compiles(r"""
+    ^
+    (
+        d\.h\.|
+        e\.v\.|
+        i\.o\.|
+        k\.j\.|
+        o\.s\.|
+        u\.a\.|
+        z\.b\.|
+        \d{2}\.\d{2}\.\d{2} # TODO: MOVE THIS DATE
+    )
+""")
 
 
 @utila.cacheme
