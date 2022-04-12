@@ -147,8 +147,8 @@ def too_many_invalid_headline_chars(text: str) -> bool:
 TOCLINE = utila.compiles(r"""
     ^
     \d{1,2}
-    .{3,}
-    [ ]{1,}
+    .{3,120}
+    [ ]{1,45}
     \d{1,3}
     $
 """)
