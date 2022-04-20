@@ -32,7 +32,7 @@ def compiles(caption: str):
 
 CAPTIONS = r"""
 Abbildung|Abb\.?|Figure|Fig\.?|
-Listing|
+Listing|Algorithmus|
 Tabelle|Table|Tab\.?|
 Graph
 """
@@ -84,12 +84,14 @@ def iscaption_figure(text: str) -> bool:
     return False
 
 
-LISTINGX = compiles(r'Listing')
+LISTINGX = compiles(r'Listing|Algorithmus')
 
 
 def iscaption_code(text: str) -> bool:
     """\
     >>> iscaption_code('Listing3.1:Bewertung von Tweets')
+    True
+    >>> iscaption_code('Algorithmus 7.3: Prove-Operator für die Aktualisierung ')
     True
     """
     text = text_limit(text)
