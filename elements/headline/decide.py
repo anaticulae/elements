@@ -30,6 +30,8 @@ def isheadline(line: str, strict: bool = True) -> bool:
     False
     >>> isheadline('Integrationstest Einlesen', strict=True)
     False
+    >>> isheadline('4 https://github.com/prometheus/node_exporter')
+    False
     """
     line = line.strip()
     if utila.verysimilar(current=line, expected=elements.HEADLINES):
@@ -73,6 +75,8 @@ def noheadline(  # pylint:disable=R0911,R1260
     >>> noheadline('2  Methode3') # highnote
     False
     >>> noheadline('Wirtschaftsforschung 82 (1), S.61-75.')
+    True
+    >>> noheadline('4 https://github.com/prometheus/node_exporter')
     True
     """
     line = line.strip()
@@ -129,6 +133,8 @@ def noheadline_simple(line: str) -> bool:  # pylint:disable=R0911
     for pattern in (TOCLINE, BIBLINE, BIBLINE_AUFLAGE):
         if pattern.match(line):
             return True
+    if HTTP.search(line):
+        return True
     if too_many_invalid_headline_chars(line):
         return True
     # NONE SIGNALS THAT NO PATTERN WAS DETECTED
@@ -149,6 +155,12 @@ def too_many_invalid_headline_chars(text: str) -> bool:
     return False
 
 
+HTTP = utila.compiles(r"""
+    http
+    [s]{0,1}
+    \:
+    //
+""")
 # 2 background          9
 TOCLINE = utila.compiles(r"""
     ^
