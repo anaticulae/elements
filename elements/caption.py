@@ -11,19 +11,34 @@ import utila
 
 PATTERN = r"""
     ^
-    (%s)
-    [ ]{0,3}
-    (
-        \d{1,2}\-\d{1,2}|
-        \d{1,2}\.?(\d{1,2}\.?)?|
-        [A-Z]
+    (?P<label>
+        (%s)
+        [ ]{0,3}
+        (
+            \d{1,2}\-\d{1,2}|
+            \d{1,2}\.?(\d{1,2}\.?)?|
+            [A-Z]
+        )
     )
     [ ]{0,3}
     \:{0,1}
     [ ]{0,3}
-    (?P<text>.{3,50})
+    (?P<text>.{3,})
     $
 """
+
+
+def parse_caption(text: str) -> tuple:
+    """\
+    >>> parse_caption('Tab. 4.2.: Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
+    ('Tab. 4.2.', 'Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
+    """
+    matched = CAPTIONX.match(text)
+    if not matched:
+        return None
+    label = matched['label']
+    text = matched['text']
+    return label, text
 
 
 def compiles(caption: str):

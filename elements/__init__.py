@@ -14,6 +14,7 @@ from elements.caption import iscaption
 from elements.caption import iscaption_code
 from elements.caption import iscaption_figure
 from elements.caption import iscaption_table
+from elements.caption import parse_caption
 from elements.headline.decide import isheadline
 from elements.headline.decide import noheadline
 from elements.headline.decide import noheadline_pattern
