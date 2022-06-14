@@ -10,6 +10,7 @@
 import re
 import statistics
 
+import configo
 import utila
 
 import elements
@@ -17,7 +18,7 @@ import elements.headline.lookup
 import elements.headline.parser
 
 
-@utila.cacheme
+@configo.cache_large
 def isheadline(line: str, strict: bool = True) -> bool:
     """\
     >>> isheadline('1. Einleitung', strict=False)
@@ -45,7 +46,7 @@ def isheadline(line: str, strict: bool = True) -> bool:
     return False
 
 
-@utila.cacheme
+@configo.cache_large
 def noheadline(  # pylint:disable=R0911,R1260
     line: str,
     length_min: int = 5,
@@ -212,7 +213,7 @@ ABBR_START = utila.compiles(r"""
 """)
 
 
-@utila.cacheme
+@configo.cache_large
 def noheadline_pattern(item: str) -> bool:
     """\
     >>> noheadline_pattern('KAPITEL  1 ')
@@ -232,7 +233,7 @@ def noheadline_pattern(item: str) -> bool:
     return False
 
 
-@utila.cacheme
+@configo.cache_large
 def singlechar(text: str) -> bool:
     """\
     >>> singlechar('A B S T R A C T')

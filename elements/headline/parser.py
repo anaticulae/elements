@@ -9,6 +9,7 @@
 
 import re
 
+import configo
 import utila
 
 import elements
@@ -16,7 +17,7 @@ import elements.headline
 import elements.headline.lookup
 
 
-@utila.cacheme
+@configo.cache_large
 def parse_headline(raw: str, before=None) -> tuple:
     """\
     >>> parse_headline('2. Einleitung')
@@ -56,7 +57,7 @@ def parse_headline(raw: str, before=None) -> tuple:
     return None
 
 
-@utila.cacheme
+@configo.cache_large
 def parse_leveled_headline(line):
     line = line.strip()
     matched = re.match(HEADLINE, line)
@@ -68,7 +69,7 @@ def parse_leveled_headline(line):
     return None
 
 
-@utila.cacheme
+@configo.cache_large
 def parse_chapter_level(raw: str) -> tuple:
     """\
     >>> parse_chapter_level('KAPITEL 1: EINLEITUNG')

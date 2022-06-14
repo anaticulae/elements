@@ -120,7 +120,7 @@ LEVEL_SECTIONS_SECTION = utila.compiles(r'^(SECTION)[ ]{1,3}\d{1,2}\:')
 LEVEL_SECTIONS_PART = utila.compiles(r'^(PART)[ ]{1,3}\d{1,2}\:')
 
 
-@utila.cacheme
+@configo.cache_large
 def level_sections(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
@@ -165,7 +165,7 @@ def istocsections(toc) -> bool:
     return True
 
 
-@utila.cacheme
+@configo.cache_large
 def level_steps(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 

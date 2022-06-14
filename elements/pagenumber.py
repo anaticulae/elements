@@ -21,6 +21,7 @@ relict of old times. Arabic numbers are used for the whole document.
 import dataclasses
 import typing
 
+import configo
 import iamraw
 import iamraw.toc
 import utila
@@ -108,6 +109,7 @@ def validate_pageorder(items) -> InvalidPages:
     return result
 
 
+@configo.cache_large
 def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
     """Determine if passed `number` is a page number.
 

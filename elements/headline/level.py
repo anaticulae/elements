@@ -10,10 +10,11 @@
 import contextlib
 import re
 
+import configo
 import utila
 
 
-@utila.cacheme
+@configo.cache_large
 def level_numbered(raw: str) -> int:
     """Convert number to raw level.
 
@@ -45,7 +46,7 @@ def level_numbered(raw: str) -> int:
     return None
 
 
-@utila.cacheme
+@configo.cache_large
 def level_steps(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
