@@ -7,8 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import re
-
 import configo
 import utila
 
@@ -59,10 +57,10 @@ def parse_headline(raw: str, before=None) -> tuple:
 @configo.cache_large
 def parse_leveled_headline(line: str):
     line = line.strip()
-    matched = re.match(HEADLINE, line)
+    matched = HEADLINE.match(line)
     if matched:
         return matched
-    matched = re.match(CHARACTER_HEADLINE, line)
+    matched = CHARACTER_HEADLINE.match(line)
     if matched:
         return matched
     return None
