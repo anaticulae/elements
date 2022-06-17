@@ -12,16 +12,18 @@ import utila
 
 import elements
 
-NOHEADLINES = utila.splitlines("""\
+NOT_IS_HEADLINE = utila.splitlines("""\
 2.3. Ermittelte charakteristische Punkte mit Standardabweichung . . . . . 7
 Abbildung 1.3.: Impulsfolgegruppe besteht aus drei Impulsfolgen
+Gutachter: Prof. Dr. Gjorgji Madjarov
 """)
 
 
 @pytest.mark.parametrize('headline', [
-    pytest.param(item, id=str(index)) for index, item in enumerate(NOHEADLINES)
+    pytest.param(item, id=str(index))
+    for index, item in enumerate(NOT_IS_HEADLINE)
 ])
-def test_no_headline(headline):
+def test_is_not_headline(headline):
     isheadline = elements.isheadline(headline, strict=False)
     assert not isheadline, headline
 
