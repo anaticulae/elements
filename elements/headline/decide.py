@@ -111,7 +111,7 @@ def noheadline(  # pylint:disable=R0911,R1260
     return False
 
 
-def noheadline_simple(line: str) -> bool:  # pylint:disable=R0911
+def noheadline_simple(line: str) -> bool:  # pylint:disable=R0911,R1260
     """\
     >>> noheadline_simple('[Fos10] FOSTER, Elvis C.: Software Engineering - A Methodical Approach. Xlibris')
     True
@@ -137,6 +137,8 @@ def noheadline_simple(line: str) -> bool:  # pylint:disable=R0911
         if pattern.match(line):
             return True
     if HTTP.search(line):
+        return True
+    if PERSON.search(line):
         return True
     if too_many_invalid_headline_chars(line):
         return True
@@ -209,6 +211,12 @@ ABBR_START = utila.compiles(r"""
         u\.a\.|
         z\.b\.|
         \d{2}\.\d{2}\.\d{2} # TODO: MOVE THIS DATE
+    )
+""")
+PERSON = utila.compiles(r"""
+    (
+        prof\.[ ]{1,3}dr\.|
+        dr\.(\-|[ ]{1,3})ing\.
     )
 """)
 

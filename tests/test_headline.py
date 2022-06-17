@@ -20,6 +20,8 @@ Gutachter: Prof. Dr. Gjorgji Madjarov
 
 NOHEADLINE = utila.splitlines("""\
 Gutachter: Prof. Dr. Gjorgji Madjarov
+- Dr.-Ing. -
+Vorsitzender: Prof. Dr. Florian Tschorsch Gutachter: Prof. Dr. Odej Kao
 """)
 
 
