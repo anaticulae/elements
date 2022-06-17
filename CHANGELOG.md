@@ -2,6 +2,20 @@
 
 Every noteable change is logged here.
 
+## v0.21.0
+
+### Feature
+
+* use simple lookup list (d14f6981ce77)
+* add simple negative list lookup (0948809e0885)
+* extend noheadline pattern (34e768502121)
+* extend noheadline pattern (386ca91c33e8)
+* extend headlines (d13649fe9943)
+
+### Fix
+
+* do not hash this complex call (ad8a86c6ba8f)
+
 ## v0.20.0
 
 ### Feature

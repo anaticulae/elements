@@ -57,7 +57,7 @@ from elements.toc import istocstepped
 from elements.toc import toc_flat
 from elements.toc import toc_style
 
-__version__ = '0.20.0'
+__version__ = '0.21.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
