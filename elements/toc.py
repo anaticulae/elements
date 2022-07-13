@@ -105,13 +105,16 @@ def istocnumbered(toc, rate_min: callable = TOC_NUMBERED_MIN) -> bool:
     return True
 
 
+TOC_NOLEVEL_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+
+
 def istocnolevel(toc) -> bool:
     if not toc:
         return False
     toc = toc_flat(toc)
     levels = len([item for item in toc if item.level is None])
     rate = levels / len(toc)
-    if rate < 0.65:  # TODO: HOLY VALUE
+    if rate < TOC_NOLEVEL_RATE_MIN:
         return False
     return True
 
@@ -150,6 +153,9 @@ def level_sections(raw: str) -> int:  # pylint:disable=R0911
     return 3
 
 
+TOC_SECTIONS_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+
+
 def istocsections(toc) -> bool:
     """Decide if a toc contains headlines with sections pattern."""
     if not toc:
@@ -160,7 +166,7 @@ def istocsections(toc) -> bool:
         if item.level and level_sections(item.level) in (1, 2)
     ])
     rate = levels / len(toc)
-    if rate < 0.65:  # TODO: HOLY VALUE
+    if rate < TOC_SECTIONS_RATE_MIN:
         return False
     return True
 
@@ -209,14 +215,19 @@ def level_steps(raw: str) -> int:  # pylint:disable=R0911
 
 STEPS_ROMAN = utila.compiles(r'^(I|II|III|IIII|IV|V|VI|VII|VIII|VIII)\.?')
 
+TOC_STEPPED_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+
 
 def istocstepped(toc) -> bool:
     """Decide if a toc contains headlines with stepped pattern."""
     if not toc:
         return False
     toc = toc_flat(toc)
-    levels = len([item for item in toc if level_steps(item.level)])
-    rate = levels / len(toc)
-    if rate < 0.65:  # TODO: HOLY VALUE
+    levels = [item for item in toc if level_steps(item.level)]
+    rate = utila.rate_rel(
+        levels,
+        toc,
+    )
+    if rate < TOC_STEPPED_RATE_MIN:
         return False
     return True
