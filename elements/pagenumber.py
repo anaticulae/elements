@@ -136,6 +136,12 @@ def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
     False
     >>> ispagenumber('Page 6 of 16')
     True
+    >>> ispagenumber('Page 733')
+    True
+    >>> ispagenumber('733 von 999')
+    True
+    >>> ispagenumber('Page 3 sur 19')
+    True
     """
     # - 1 -, -2-,
     number = str(number).strip('- ')
@@ -158,15 +164,31 @@ def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
 
 COMPLEX_PAGENUMBER = utila.compiles(r"""
     ^
-    \d{0,3}
+    \d{0,3}             # TODO: WHY?
     [ ]{0,3}
-    (Seite|Page){0,1}
-    [ ]{0,3}
-    \d{1,3}
-    [ ]{0,3}
-    (von|of)
-    [ ]{0,3}
-    \d{1,3}
+    (
+        (Seite|Page)
+        [ ]{0,3}
+        (
+            \d{1,3}
+        )
+        (
+            [ ]{0,3}
+            (von|of|sur)
+            [ ]{0,3}
+            \d{1,3}
+        )?
+    )
+    |
+    (
+        (
+            \d{1,3}
+        )
+        [ ]{0,3}
+        (von|of|sur)
+        [ ]{0,3}
+        \d{1,3}
+    )
 """)
 
 SEPARATED_PAGENUMBERS = utila.compiles(r'^\d{1,3}/\d{1,3}')
