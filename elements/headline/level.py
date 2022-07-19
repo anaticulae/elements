@@ -68,23 +68,43 @@ def level_steps(raw: str) -> int:  # pylint:disable=R0911
     5
     >>> level_steps('dd) Bewertung')
     6
+    >>> level_steps('(1) "weite" Auffassung der Vertrauensfrage')  # home021a
+    7
+    >>> assert level_steps('1.2.3 I am numbered') is None
+    >>> level_steps('IV.1 Polymerisation')
+    4
     """
     raw = raw.strip() if raw else None
     if not raw:
-        return 1
+        return None
     if re.match(r'^(KAPITEL)[ ]{1,3}\d{1,2}', raw, re.IGNORECASE):
         return 1
     if re.match(r'^(A|B|C|D|E|F|G|H)\.', raw, re.IGNORECASE):
         return 2
-    if re.match(r'^(I|II|III|IIII|IV|V|VI|VII|VIII)\.?', raw, re.IGNORECASE):
+    if STEPS_ROMAN_SUB.match(raw):
+        return 4
+    if STEPS_ROMAN.match(raw):
         return 3
-    if re.match(r'^\d{1,2}\.', raw, re.IGNORECASE):
+    if re.match(r'^\d{1,2}\.(?!\d)', raw, re.IGNORECASE):
         return 4
     if re.match(r'^[a-h]\)', raw, re.IGNORECASE):
         return 5
     if re.match(r'^[a-h]{2}\)', raw, re.IGNORECASE):
         return 6
+    if re.match(r'^\(\d\)', raw, re.IGNORECASE):
+        return 7
     return None
+
+
+STEPS_ROMAN = utila.compiles(r'^(I|II|III|IIII|IV|V|VI|VII|VIII|VIII)\.?')
+STEPS_ROMAN_SUB = utila.compiles(r"""
+    ^
+    (I|II|III|IIII|IV|V|VI|VII|VIII|VIII)
+    [ ]{0,1}
+    \.
+    [ ]{0,1}
+    \d{1,2}
+""")
 
 
 def level_numbered_dots(raw: str) -> int:
