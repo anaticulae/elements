@@ -2,6 +2,15 @@
 
 Every noteable change is logged here.
 
+## v0.21.4
+
+### Feature
+
+* remove code duplication, improve headline level parser (bf2cfd4ca3f6)
+* add stepped level detector (a2a419749598)
+* extend elements level parser (28b9b43b6b08)
+* add french toc headline (f57e394bae5d)
+
 ## v0.21.3
 
 ## v0.21.2
