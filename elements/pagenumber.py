@@ -19,7 +19,6 @@ relict of old times. Arabic numbers are used for the whole document.
 """
 
 import dataclasses
-import typing
 
 import configo
 import iamraw
@@ -42,7 +41,7 @@ class InvalidRomanPageNumber(InvalidPage):
     pass
 
 
-InvalidPages = typing.List[InvalidPage]
+InvalidPages = list[InvalidPage]
 
 
 def validate_toc(toc: iamraw.Toc) -> InvalidPages:

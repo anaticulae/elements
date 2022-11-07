@@ -164,7 +164,7 @@ def too_many_invalid_headline_chars(text: str) -> bool:
     special = 0
     for char in '+-=_!@#$%^&*':
         special += text.count(char)
-    special += len(utila.parse_numbers(text))
+    special += len(utila.parse_ints(text))
     if special > 5:
         return True
     return False

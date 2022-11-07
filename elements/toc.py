@@ -161,7 +161,7 @@ def istocsections(toc) -> bool:
     toc = toc_flat(toc)
     levels = len([
         item for item in toc
-        if item.level and level_sections(item.level) in (1, 2)
+        if item.level and level_sections(item.level) in {1, 2}
     ])
     rate = levels / len(toc)
     if rate < TOC_SECTIONS_RATE_MIN:
