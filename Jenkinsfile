@@ -1,45 +1,67 @@
-pipeline {
-    agent {
-        docker {
-            image '169.254.149.20:6001/arch_python_baw:0.15.0'
-            args  '-v $WORKSPACE:/var/workdir'
+@Library('caelum@refs/tags/v0.12.0') _
+
+pipeline{
+    agent{
+        docker{
+            image '169.254.149.20:6001/arch_python_git_baw:v1.45.0'
         }
     }
-
-    parameters {
-        string(name: 'BRANCH', defaultValue: 'master')
-        booleanParam(name: 'RELEASE', defaultValue: false)
-    }
-
     stages{
-        stage('sync'){
-            steps{
-                sh 'baw sync all'
-                sh 'baw sh "pip install ."'
+        stage('integrate'){
+            steps{script{baw.integrate()}}
+        }
+        stage('setup'){
+            steps{script{baw.setup()}}
+        }
+        stage('test'){
+            failFast true
+            parallel{
+                stage('doc'){
+                    steps{
+                        script{baw.doctest()}
+                    }
+                }
+                stage('fast'){
+                    steps{
+                        script{baw.fast()}
+                    }
+                }
+                stage('long'){
+                    steps{
+                        script{baw.longrun()}
+                    }
+                }
             }
         }
-        stage('doctest'){
+        stage('all'){
             steps{
-                sh 'baw test docs -n1'
+                script{baw.all()}
             }
         }
-        stage('fast'){
-            steps{
-                sh 'baw test fast -n5 --cov --junit_xml=report.xml'
+        stage('quality'){
+            failFast true
+            parallel{
+                stage('lint'){
+                    steps{
+                        script{baw.lint()}
+                    }
+                }
+                stage('format'){
+                    steps{
+                        script{baw.format()}
+                    }
+                }
             }
         }
-        stage('lint'){
-            steps{
-                sh 'baw lint'
-            }
+        stage('pre-release'){
+            steps{script{baw.pre()}}
         }
         stage('release'){
-            when {
-                expression { return params.RELEASE }
-            }
             steps{
-                sh 'baw install && baw release && baw publish'
-                // TODO: GIT COMMIT?
+                script{
+                    publish.release()
+                    baw.rebase()
+                }
             }
         }
     }
