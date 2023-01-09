@@ -30,6 +30,8 @@ def level_numbered(raw: str) -> int:
     1
     >>> level_numbered('A. Gesamtbewertung')
     1
+    >>> level_numbered('2.6.1.1. Hypoxia Inducible Factor')
+    4
     """
     # TODO: SUPPORT LEVEL WITHOUT SPACE
     raw = raw.strip()
@@ -191,6 +193,8 @@ def determine_patch(raw: str) -> int:
     6
     >>> determine_patch('CHAPTER 8:')
     8
+    >>> determine_patch('2.6.1.2.')
+    2
     """
     if not raw:
         return None
