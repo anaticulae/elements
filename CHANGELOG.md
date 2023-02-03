@@ -2,6 +2,18 @@
 
 Every noteable change is logged here.
 
+## v0.22.0 (2023-02-03)
+
+### Feature
+
+* add headlines for own publication (c679bd564a51)
+
+### Chore
+
+* upgrade requirements.txt (1cce82b4ebf5)
+* upgrade pipe library (1164d3b1de28)
+* upgrade Jenkinsfile (84a872209e55)
+
 ## v0.21.7 (2023-01-03)
 
 ### Documentation
