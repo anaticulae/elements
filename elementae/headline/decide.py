@@ -13,10 +13,10 @@ import statistics
 import configos
 import utilo
 
-import elements
-import elements.headline.lookup
-import elements.headline.negative
-import elements.headline.parser
+import elementae
+import elementae.headline.lookup
+import elementae.headline.negative
+import elementae.headline.parser
 
 
 @configos.cache_large
@@ -38,9 +38,9 @@ def isheadline(line: str, strict: bool = True) -> bool:
     True
     """
     line = line.strip()
-    if utilo.verysimilar(current=line, expected=elements.HEADLINES):
+    if utilo.verysimilar(current=line, expected=elementae.HEADLINES):
         return True
-    if not strict and elements.headline.parser.parse_headline(line):
+    if not strict and elementae.headline.parser.parse_headline(line):
         if noheadline(line):
             return False
         return True
@@ -105,14 +105,14 @@ def noheadline(  # pylint:disable=R0911,R1260
     mean_words_length = statistics.mean(wordslength)
     if mean_words_length < mean_words_length_min:
         return True
-    parsed = elements.headline.parser.parse_headline(line)
+    parsed = elementae.headline.parser.parse_headline(line)
     if parsed:
         # title
         if utilo.char_rate(parsed[0]) < 0.5:
             return True
-    if elements.isquote(line):
+    if elementae.isquote(line):
         return True
-    if elements.headline.negative.noheadline(line):
+    if elementae.headline.negative.noheadline(line):
         return True
     if isheadline(line, strict=strict):
         return False

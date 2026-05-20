@@ -14,8 +14,8 @@ import iamraw
 import iamraw.toc
 import utilo
 
-import elements.headline.level
-import elements.headline.lookup
+import elementae.headline.level
+import elementae.headline.lookup
 
 TOC_NUMBERED_RATE_MIN = configos.HolyRate(items=(
     (1, 1),
@@ -66,7 +66,7 @@ def istoc(headline: str) -> bool:
     """
     if utilo.similar(
             current=headline,
-            expected=elements.headline.lookup.TOC,
+            expected=elementae.headline.lookup.TOC,
             maxdiff=0.9,
     ):
         return True
@@ -100,7 +100,7 @@ def istocnumbered(toc, rate_min: callable = TOC_NUMBERED_RATE_MIN) -> bool:
     toc = toc_flat(toc)
     levels = len([
         item for item in toc if item.level and
-        elements.headline.level.level_numbered_dots(item.level)
+        elementae.headline.level.level_numbered_dots(item.level)
     ])
     rate_min: float = rate_min(len(toc))
     rate = levels / len(toc)
@@ -175,7 +175,7 @@ def istocstepped(toc) -> bool:
         return False
     toc = toc_flat(toc)
     levels = [
-        item for item in toc if elements.headline.level.level_steps(item.level)
+        item for item in toc if elementae.headline.level.level_steps(item.level)
     ]
     rate = utilo.rate_rel(
         levels,

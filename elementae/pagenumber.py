@@ -25,7 +25,7 @@ import iamraw
 import iamraw.toc
 import utilo
 
-import elements
+import elementae
 
 
 @dataclasses.dataclass
@@ -45,7 +45,7 @@ InvalidPages = list[InvalidPage]
 
 
 def validate_toc(toc: iamraw.Toc) -> InvalidPages:
-    toc = elements.toc_flat(toc)
+    toc = elementae.toc_flat(toc)
     items = [(item.page, item.title, item.raw_location) for item in toc]
     result = validate_pageorder(items)
     return result

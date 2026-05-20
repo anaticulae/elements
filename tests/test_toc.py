@@ -9,7 +9,7 @@
 
 import iamraw
 
-import elements
+import elementae
 
 EXAMPLE = iamraw.Toc(children=[
     iamraw.SectionRaw(
@@ -44,19 +44,19 @@ EXAMPLE = iamraw.Toc(children=[
 
 
 def test_toc_flat():
-    flat = elements.toc_flat(EXAMPLE)
+    flat = elementae.toc_flat(EXAMPLE)
     assert len(flat) == 4
 
 
 def test_toc_numbered():
-    flat = elements.toc_flat(EXAMPLE)
-    style = elements.toc_style(flat, toc_length_min=1)
+    flat = elementae.toc_flat(EXAMPLE)
+    style = elementae.toc_style(flat, toc_length_min=1)
     assert style == iamraw.TocStyle.NUMBERED
-    assert elements.istocnumbered(flat) == iamraw.TocStyle.NUMBERED
+    assert elementae.istocnumbered(flat) == iamraw.TocStyle.NUMBERED
 
 
 INVALID_TOC = [
-    elements.InvalidPage(
+    elementae.InvalidPage(
         current=62,
         before=66,
         text='Evaluierung und Demonstration des Prototypen',
@@ -66,5 +66,5 @@ INVALID_TOC = [
 
 
 def test_toc_validate():
-    invalids = elements.validate_toc(EXAMPLE)
+    invalids = elementae.validate_toc(EXAMPLE)
     assert invalids == INVALID_TOC

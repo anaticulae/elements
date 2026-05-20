@@ -9,7 +9,7 @@
 
 import pytest
 
-import elements
+import elementae
 
 
 def test_invalid_roman_number():
@@ -19,9 +19,9 @@ def test_invalid_roman_number():
         ('ixx', 'Abbildungsverzeichnis xviii', 7),
         ('xx', 'Lebenslauf', 7),
     ]
-    validated = elements.validate_pageorder(example)
+    validated = elementae.validate_pageorder(example)
     expected = [
-        elements.InvalidRomanPageNumber(
+        elementae.InvalidRomanPageNumber(
             current='ixx',  # invalid roman number!
             before='xvii',
             text='Abbildungsverzeichnis xviii',
@@ -33,4 +33,4 @@ def test_invalid_roman_number():
 
 @pytest.mark.parametrize('nopagenumber', ['', 'a'])
 def test_ispagenumber_negative(nopagenumber):
-    assert not elements.ispagenumber(nopagenumber)
+    assert not elementae.ispagenumber(nopagenumber)

@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "elements"
+name = "elementae"
 version = "1.0.0"
 description = ""
 requires-python = ">=3.12"
@@ -39,8 +39,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/anaticulae/elements"
-Repository = "https://github.com/anaticulae/elements"
+Homepage = "https://github.com/anaticulae/elementae"
+Repository = "https://github.com/anaticulae/elementae"
 
 [tool.semantic_release]
 version_toml = [
@@ -73,8 +73,8 @@ where = [
     ".",
 ]
 include = [
-    "elements",
-    "elements.headline",
+    "elementae",
+    "elementae.headline",
 ]
 exclude = [
     "tests*",

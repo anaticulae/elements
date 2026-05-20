@@ -10,9 +10,9 @@
 import configos
 import utilo
 
-import elements
-import elements.headline
-import elements.headline.lookup
+import elementae
+import elementae.headline
+import elementae.headline.lookup
 
 
 def parse_headline(raw: str, before=None) -> tuple:
@@ -32,7 +32,7 @@ def parse_headline(raw: str, before=None) -> tuple:
     parsed = parse_leveled_headline(raw)
     if parsed:
         rawlevel, title = parsed['level'], parsed['text']
-        level = elements.level_numbered(rawlevel)
+        level = elementae.level_numbered(rawlevel)
         if level is False:  # pylint:disable=C2001
             return None
         return title, level, rawlevel
@@ -46,12 +46,12 @@ def parse_headline(raw: str, before=None) -> tuple:
             #   ANHANG 2: SUMMARY
             level = 2
         return title, level, rawlevel
-    if utilo.similar(elements.HEADLINES, raw):
+    if utilo.similar(elementae.HEADLINES, raw):
         return raw, 1, ''
     if before:
         # look back and check for `Kapitel-X-Pattern`
         before = utilo.normalize_text(before, normalize_spaces=True)
-        chapter = elements.noheadline_pattern(before)
+        chapter = elementae.noheadline_pattern(before)
         if chapter:
             return raw, 1, ''
     return None

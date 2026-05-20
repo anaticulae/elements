@@ -10,7 +10,7 @@
 import pytest
 import utilo
 
-import elements
+import elementae
 
 NOT_IS_HEADLINE = utilo.splitlines("""\
 2.3. Ermittelte charakteristische Punkte mit Standardabweichung . . . . . 7
@@ -32,7 +32,7 @@ s.  Abb.  7a).
     for index, item in enumerate(NOT_IS_HEADLINE)
 ])
 def test_is_not_headline(headline):
-    isheadline = elements.isheadline(headline, strict=False)
+    isheadline = elementae.isheadline(headline, strict=False)
     assert not isheadline, headline
 
 
@@ -40,17 +40,17 @@ def test_is_not_headline(headline):
     pytest.param(item, id=str(index)) for index, item in enumerate(NOHEADLINE)
 ])
 def test_noheadline(headline):
-    noheadline = elements.noheadline(headline)
+    noheadline = elementae.noheadline(headline)
     assert noheadline, headline
 
 
 @pytest.mark.timeout(2)
 def test_parse_leveled_headline_numbers_timeout():
     longrun = '356891013151618192023252628293031323312471112141721222427'
-    assert not elements.parse_leveled_headline(longrun)
+    assert not elementae.parse_leveled_headline(longrun)
 
 
 @pytest.mark.timeout(2)
 def test_parse_leveled_headline_chars_timeout():
     longrun = 'ahsdkfhakhdkfhasdkfhakshdfkjasdhdfkshaskhdkhafsdkh'
-    assert not elements.parse_leveled_headline(longrun)
+    assert not elementae.parse_leveled_headline(longrun)

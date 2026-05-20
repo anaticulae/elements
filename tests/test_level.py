@@ -10,7 +10,7 @@
 import pytest
 import utilo
 
-import elements
+import elementae
 
 HEADLINE_LEVEL = utilo.splitlines("""\
 1   2. Zentrum
@@ -26,7 +26,7 @@ HEADLINE_LEVEL = utilo.splitlines("""\
 def test_headline_level(line):
     expected, raw = line.split(maxsplit=1)
     expected = int(expected)
-    level = elements.level_numbered(raw)
+    level = elementae.level_numbered(raw)
     assert level == expected
 
 
@@ -41,5 +41,5 @@ NOHEADLINE_LEVEL = utilo.splitlines("""\
     for index, item in enumerate(NOHEADLINE_LEVEL)
 ])
 def test_noheadline_level(noheadline):
-    nolevel = elements.level_numbered(noheadline)
+    nolevel = elementae.level_numbered(noheadline)
     assert nolevel is False  # pylint:disable=C2001
