@@ -1,456 +1,1118 @@
-# Changelog
+# CHANGELOG
 
-Every noteable change is logged here.
+
+## v1.0.0 (2026-05-20)
+
+### Bug Fixes
+
+- **look**: List does not support |
+  ([`c8d422b`](https://github.com/anaticulae/elements/commit/c8d422b83fa97b520685869070f4ebc08c297a23))
+
+### Chores
+
+- **github**: Add .github
+  ([`812c541`](https://github.com/anaticulae/elements/commit/812c541f41fc4d043a5627ab8e8357f0527c68ff))
+
+- **project**: Add modern setup
+  ([`59582fe`](https://github.com/anaticulae/elements/commit/59582fe14d6bf484c9acd729ef27a3028e4015c3))
+
+### Refactoring
+
+- **packages**: Rename packages
+  ([`9ba1def`](https://github.com/anaticulae/elements/commit/9ba1def020610262c3ad3848b7361f24ef4b9f44))
+
 
 ## v0.22.0 (2023-02-03)
 
-### Feature
+### Chores
 
-* add headlines for own publication (c679bd564a51)
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`84a8722`](https://github.com/anaticulae/elements/commit/84a872209e550f7e9aba68815ac9a3e66cdde418))
 
-### Chore
+- **Jenkins**: Upgrade pipe library
+  ([`1164d3b`](https://github.com/anaticulae/elements/commit/1164d3b1de28a28a5bec4205557e278e1c82a270))
 
-* upgrade requirements.txt (1cce82b4ebf5)
-* upgrade pipe library (1164d3b1de28)
-* upgrade Jenkinsfile (84a872209e55)
+- **requirements**: Upgrade requirements.txt
+  ([`1cce82b`](https://github.com/anaticulae/elements/commit/1cce82b4ebf5a241785e697ca8fa18a517a3c857))
+
+### Features
+
+- **headline**: Add headlines for own publication
+  ([`c679bd5`](https://github.com/anaticulae/elements/commit/c679bd564a51e37eebfc62a4481e42302e537e7f))
+
+### Testing
+
+- **headline**: Verify headline parser
+  ([`9fe3cfd`](https://github.com/anaticulae/elements/commit/9fe3cfd52923dffe882620f6ab403d000c7e6e06))
+
+- **level**: Verify long patch
+  ([`5ec8547`](https://github.com/anaticulae/elements/commit/5ec8547c25f7c68b0929dd9de826a03d099193ca))
+
 
 ## v0.21.7 (2023-01-03)
 
+### Chores
+
+- **Jenkins**: Upgrade pipeline
+  ([`ad25a7a`](https://github.com/anaticulae/elements/commit/ad25a7a5b0e58344d42fea6c1b0ceb30e6d176dd))
+
+- **requirements**: Upgrade requirements.txt
+  ([`c3fd821`](https://github.com/anaticulae/elements/commit/c3fd821c8273080a1c3fe6e32b919c8c15fc38d4))
+
+- **setup**: Use quick install
+  ([`8f2b3eb`](https://github.com/anaticulae/elements/commit/8f2b3ebc4703b9401b633155ff9443fecd77e8e6))
+
 ### Documentation
 
-* happy New Year! (df7b9bebd76d)
+- **copyright**: Happy New Year!
+  ([`df7b9be`](https://github.com/anaticulae/elements/commit/df7b9bebd76dc535def1fb92b801eb693e69d3f0))
 
-### Chore
+### Refactoring
 
-* use quick install (8f2b3ebc4703)
-* upgrade requirements.txt (c3fd821c8273)
-* upgrade pipeline (ad25a7a5b0e5)
+- **replace**: Automated replacement
+  ([`62a961b`](https://github.com/anaticulae/elements/commit/62a961bd4d9f1481d5f6a1f77db8049f98980f52))
+
 
 ## v0.21.6 (2022-10-05)
 
-### Chore
+### Chores
 
-* remove nightly step (c9fa8b54d718)
-* upgrade requirements.txt (8a4cbfca45d6)
-* upgrade baw (d5ac057fd649)
-* do not run in privileged mode (0042b18d36f9)
+- **Jenkinsfile**: Do not run in privileged mode
+  ([`0042b18`](https://github.com/anaticulae/elements/commit/0042b18d36f97515f80bdf00be111eeeaf9fb3f9))
 
-## v0.21.4
+- **Jenkinsfile**: Remove nightly step
+  ([`c9fa8b5`](https://github.com/anaticulae/elements/commit/c9fa8b54d71811b7433d0af2f8730ccd848864e2))
 
-### Feature
+- **Jenkinsfile**: Upgrade baw
+  ([`d5ac057`](https://github.com/anaticulae/elements/commit/d5ac057fd649c3025099f10bdfb87b7098478176))
 
-* remove code duplication, improve headline level parser (bf2cfd4ca3f6)
-* add stepped level detector (a2a419749598)
-* extend elements level parser (28b9b43b6b08)
-* add french toc headline (f57e394bae5d)
+- **requirements**: Upgrade requirements.txt
+  ([`8a4cbfc`](https://github.com/anaticulae/elements/commit/8a4cbfca45d624bad2a6698695c296b1c1bdd98d))
 
-## v0.21.3
+### Code Style
 
-## v0.21.2
+- **changelog**: Adjust to automation tool
+  ([`2bdd127`](https://github.com/anaticulae/elements/commit/2bdd127482624fd773ac4a4f266b30746b1df8cf))
 
-### Feature
 
-* use real holy values (f86901f793e7)
-* add no headline decider (17a5c232abdf)
+## v0.21.5 (2022-09-28)
 
-## v0.21.1
+### Chores
 
-### Feature
+- **ci**: Add Jenkinsfile
+  ([`23f63db`](https://github.com/anaticulae/elements/commit/23f63db0c6455f48d71b7f2b1574b98332130266))
 
-* extend headlines list (a9e4575054bb)
+- **requirements**: Upgrade requirements.txt
+  ([`ab5f543`](https://github.com/anaticulae/elements/commit/ab5f543afda3dcc6d1248a4c5d82ff16f11af623))
 
-## v0.21.0
 
-### Feature
+## v0.21.4 (2022-07-19)
 
-* use simple lookup list (d14f6981ce77)
-* add simple negative list lookup (0948809e0885)
-* extend noheadline pattern (34e768502121)
-* extend noheadline pattern (386ca91c33e8)
-* extend headlines (d13649fe9943)
+### Chores
 
-### Fix
+- **requirements**: Upgrade requirements.txt
+  ([`4a381ce`](https://github.com/anaticulae/elements/commit/4a381ce54f47fb938a49973d8ace29d1b40a10b2))
 
-* do not hash this complex call (ad8a86c6ba8f)
+### Features
 
-## v0.20.0
+- **headline**: Remove code duplication, improve headline level parser
+  ([`bf2cfd4`](https://github.com/anaticulae/elements/commit/bf2cfd4ca3f6b250acc951dd727d871c635d15bc))
 
-### Feature
+- **lookup**: Add french toc headline
+  ([`f57e394`](https://github.com/anaticulae/elements/commit/f57e394bae5d5a75107b2930b26cd319795c0a85))
 
-* use configo cacher (658f2b713d9e)
-* extend page number detector (728f63efac84)
+- **toc**: Add stepped level detector
+  ([`a2a4197`](https://github.com/anaticulae/elements/commit/a2a419749598b3bf1127d8be5a0d116cc8ae494f))
 
-## v0.19.0
+- **toc**: Extend elements level parser
+  ([`28b9b43`](https://github.com/anaticulae/elements/commit/28b9b43b6b08aab378b396a4dd0e91d3e907b53b))
 
-### Feature
 
-* add method to parse captions (243ca4a16631)
+## v0.21.3 (2022-07-15)
 
-## v0.18.3
 
-### Feature
+## v0.21.2 (2022-07-13)
 
-* extend no headline decider (5ce01cd125fd)
+### Features
 
-## v0.18.2
+- **decide**: Add no headline decider
+  ([`17a5c23`](https://github.com/anaticulae/elements/commit/17a5c232abdf5af695e808cdc7d1bb3e69ab8376))
 
-### Feature
+- **toc**: Use real holy values
+  ([`f86901f`](https://github.com/anaticulae/elements/commit/f86901f793e7c1dc56f54d734ff1460d790aed63))
 
-* extend caption code word (ae70e373269d)
+### Refactoring
 
-## v0.18.1
+- **toc**: Sort methods
+  ([`b7c807c`](https://github.com/anaticulae/elements/commit/b7c807cbd901a1fced4ebe28dacde59fac1e7440))
 
-### Feature
 
-* increase required equality (23822be7fdf3)
+## v0.21.1 (2022-07-13)
 
-## v0.18.0
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`6112def`](https://github.com/anaticulae/elements/commit/6112def37466f55ffde677698491ff8b1d8d387f))
 
-* extend invalid headline pattern (c199b884a661)
-* reduce range of possible chapter (f316922b3d1f)
-* move patch determiner from words (1942c584bf98)
+### Features
 
-### Fix
+- **lookup**: Extend headlines list
+  ([`a9e4575`](https://github.com/anaticulae/elements/commit/a9e4575054bbea0b8903b81c42a25f5842c21410))
 
-* limit regex execution time (5e025f8868a9)
-* extend no headline pattern (2ec37e6f639c)
 
-## v0.17.3
+## v0.21.0 (2022-06-17)
 
-### Feature
+### Bug Fixes
 
-* handle zero numbered ending (cc1961b1c43c)
-* extend headlines (ccf3133e0d9c)
+- **parser**: Do not hash this complex call
+  ([`ad8a86c`](https://github.com/anaticulae/elements/commit/ad8a86c6ba8fd4387024fb77aab0d8b17c3ddea7))
 
-## v0.17.2
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`c7500a8`](https://github.com/anaticulae/elements/commit/c7500a8cd1b8e80b796f995584f42c47986c170e))
 
-* extend headlines (702bcb45127d)
+### Features
 
-### Fix
+- **decide**: Extend noheadline pattern
+  ([`34e7685`](https://github.com/anaticulae/elements/commit/34e768502121bd82b74805d2c30c4fa07da0bf73))
 
-* adjust appendix headline level (7f52f4082a42)
+- **decide**: Extend noheadline pattern
+  ([`386ca91`](https://github.com/anaticulae/elements/commit/386ca91c33e83544c1bf659117471d13e029c519))
 
-## v0.17.1
+- **decide**: Use simple lookup list
+  ([`d14f698`](https://github.com/anaticulae/elements/commit/d14f6981ce777f6c7bfc82b142b181bf57683740))
 
-### Feature
+- **headline**: Add simple negative list lookup
+  ([`0948809`](https://github.com/anaticulae/elements/commit/0948809e0885e40469b5e34032aab1cb7187ca00))
 
-* extend abbreviation list (0d485ea5b14c)
+- **lookup**: Extend headlines
+  ([`d13649f`](https://github.com/anaticulae/elements/commit/d13649fe994352ae5cb6600daa0d20b3589bcfe9))
 
-## v0.17.0
+### Refactoring
 
-### Feature
+- **parser**: Remove unused regex package
+  ([`3db12bd`](https://github.com/anaticulae/elements/commit/3db12bd9ab30d4e53cd364ea91bf4d467297b6b9))
 
-* add explicit figure caption (ab76d7505899)
-* extend headline table (d74f66ef8ec4)
+### Testing
 
-### Fix
+- **headline**: Verify no headline checker
+  ([`d1dc9cc`](https://github.com/anaticulae/elements/commit/d1dc9cc4d054756cf70661cbeb68c6f8a0d54d10))
 
-* do not strip `minus` inside potential number (7c13f59d243f)
-* skip too long page numbers as potential page number (a7545b9ef6f1)
-* skip missing page number (caa06b5de6fe)
+- **noheadline**: Extend unit test
+  ([`3fcf62f`](https://github.com/anaticulae/elements/commit/3fcf62fbf20e0038b1a80a0cf3277b6a089b561c))
 
-## v0.16.3
+- **rename**: Rename test
+  ([`9f5e7b8`](https://github.com/anaticulae/elements/commit/9f5e7b893b6e305176015f878ca4c2605190595c))
 
-### Fix
 
-* make regex robust vs timing problems (bb6450d42971)
+## v0.20.0 (2022-06-14)
 
-## v0.16.2
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`e2a8ac2`](https://github.com/anaticulae/elements/commit/e2a8ac230cdc4c36efadbbecaec22ada55c2474e))
 
-* extend public API (141a2b3e4624)
+### Features
+
+- **cache**: Use configo cacher
+  ([`658f2b7`](https://github.com/anaticulae/elements/commit/658f2b713d9e42f16d18371161054a8e01a11fc0))
+
+- **pagenumber**: Extend page number detector
+  ([`728f63e`](https://github.com/anaticulae/elements/commit/728f63efac844490730bc85d0d7597642e0edfee))
+
+
+## v0.19.0 (2022-06-05)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`1d83c98`](https://github.com/anaticulae/elements/commit/1d83c986aeeb7ce888e7de9a5df8e69d08554c03))
+
+### Features
+
+- **caption**: Add method to parse captions
+  ([`243ca4a`](https://github.com/anaticulae/elements/commit/243ca4a16631155eda70d568348fbf1f3e550d0e))
+
+### Testing
+
+- **headline**: Verify bib headline
+  ([`7aa853c`](https://github.com/anaticulae/elements/commit/7aa853cd6cedee59d7f305e1cb05029cdcf80c6d))
+
+
+## v0.18.3 (2022-04-26)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`9fda133`](https://github.com/anaticulae/elements/commit/9fda133e0c3eab27da875e8c5e3b05615630a2db))
+
+### Features
+
+- **decide**: Extend no headline decider
+  ([`5ce01cd`](https://github.com/anaticulae/elements/commit/5ce01cd125fdd609597074c87708811746ba487b))
+
+
+## v0.18.2 (2022-04-20)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`9fee601`](https://github.com/anaticulae/elements/commit/9fee6016c17ab4ab50f53d85b70014d6ef8d3309))
+
+### Features
+
+- **caption**: Extend caption code word
+  ([`ae70e37`](https://github.com/anaticulae/elements/commit/ae70e373269de04840458911fc91bf7afb6425da))
+
+### Testing
+
+- **headline**: Increase test coverage
+  ([`30cb089`](https://github.com/anaticulae/elements/commit/30cb089ba92649959f2ba71d2fcf4d9daea6f4ff))
+
+
+## v0.18.1 (2022-04-14)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`ae0074a`](https://github.com/anaticulae/elements/commit/ae0074aad6df61f03b9da10a082d6af82236af70))
+
+### Features
+
+- **decide**: Add special dot to skip no headline
+  ([`1a9ffdc`](https://github.com/anaticulae/elements/commit/1a9ffdc50ff3499781865c064b5f2d68efde3dcf))
+
+- **decide**: Increase required equality
+  ([`23822be`](https://github.com/anaticulae/elements/commit/23822be7fdf3ea357aa6a7ec7e794399afae3774))
+
+
+## v0.18.0 (2022-04-12)
+
+### Bug Fixes
+
+- **decider**: Limit regex execution time
+  ([`5e025f8`](https://github.com/anaticulae/elements/commit/5e025f8868a907da7c79affe823dadff8182766f))
+
+- **headline**: Extend no headline pattern
+  ([`2ec37e6`](https://github.com/anaticulae/elements/commit/2ec37e6f639c7eb16a804f2e6d4cc64a6ca28ee8))
+
+### Features
+
+- **decide**: Extend invalid headline pattern
+  ([`c199b88`](https://github.com/anaticulae/elements/commit/c199b884a6611fbd0d79aff0b53a28d944414492))
+
+- **headline**: Reduce range of possible chapter
+  ([`f316922`](https://github.com/anaticulae/elements/commit/f316922b3d1f51059c99f172a26fa1c3db38f435))
+
+- **level**: Move patch determiner from words
+  ([`1942c58`](https://github.com/anaticulae/elements/commit/1942c584bf9832afde176d30bcdb756e4f666dab))
+
+### Refactoring
+
+- **decide**: Format regex
+  ([`db1eaa0`](https://github.com/anaticulae/elements/commit/db1eaa07b4ad607c5e9042f55ba4fe1911eaabf8))
+
+- **level**: Unite regex pattern
+  ([`b94912f`](https://github.com/anaticulae/elements/commit/b94912f420698d64c9cdd4f884894850d04baf92))
+
+
+## v0.17.3 (2022-04-07)
+
+### Features
+
+- **level**: Handle zero numbered ending
+  ([`cc1961b`](https://github.com/anaticulae/elements/commit/cc1961b1c43c26b479feaa2a7dade2f436607361))
+
+- **lookup**: Extend headlines
+  ([`ccf3133`](https://github.com/anaticulae/elements/commit/ccf3133e0d9c1ddee1324ecfbee212cf57f2ec2b))
+
+
+## v0.17.2 (2022-04-07)
+
+### Bug Fixes
+
+- **level**: Adjust appendix headline level
+  ([`7f52f40`](https://github.com/anaticulae/elements/commit/7f52f4082a426d695f7f117b54994c2e19f4e547))
+
+### Features
+
+- **lookup**: Extend headlines
+  ([`702bcb4`](https://github.com/anaticulae/elements/commit/702bcb45127d03e6e03ebf4b7943c1954c48bab2))
+
+
+## v0.17.1 (2022-04-03)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`35c3119`](https://github.com/anaticulae/elements/commit/35c311952d3c3cddc37da119bb8d6d63a0ad1060))
+
+### Features
+
+- **lookup**: Extend abbreviation list
+  ([`0d485ea`](https://github.com/anaticulae/elements/commit/0d485ea5b14ce963558e6cd5fa60c6a62b0fee35))
+
+
+## v0.17.0 (2022-03-01)
+
+### Bug Fixes
+
+- **pagenumber**: Do not strip `minus` inside potential number
+  ([`7c13f59`](https://github.com/anaticulae/elements/commit/7c13f59d243f28b11fda09e6d17e6f87a1337cbb))
+
+- **pagenumber**: Skip too long page numbers as potential page number
+  ([`a7545b9`](https://github.com/anaticulae/elements/commit/a7545b9ef6f1f4382887e804764477bcc64abf7b))
+
+- **toc**: Skip missing page number
+  ([`caa06b5`](https://github.com/anaticulae/elements/commit/caa06b5de6fe6face2ebcc7159137d58c40b11df))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`8d1f0c7`](https://github.com/anaticulae/elements/commit/8d1f0c74142465a8b5aeb853b0c0d9176863d35f))
+
+### Code Style
+
+- **docs**: Adjust headline
+  ([`7260d22`](https://github.com/anaticulae/elements/commit/7260d2275d0aadf698c21d15eb31e22ab3a451d2))
+
+- **pagenumbers**: Format docs
+  ([`2c15e48`](https://github.com/anaticulae/elements/commit/2c15e48e53dcacacf86f10289f16d52e473cee82))
+
+### Features
+
+- **caption**: Add explicit figure caption
+  ([`ab76d75`](https://github.com/anaticulae/elements/commit/ab76d75058995f3ac7692034d008dff44bf5b749))
+
+- **lookup**: Extend headline table
+  ([`d74f66e`](https://github.com/anaticulae/elements/commit/d74f66ef8ec4320a162c0ff4674f31b472f6da50))
+
+### Refactoring
+
+- **caption**: Replace with utila code
+  ([`2616600`](https://github.com/anaticulae/elements/commit/261660010ccb061167131e3d37ba08f99f176ef0))
+
+- **pagenumber**: Compile regex pattern
+  ([`5f30067`](https://github.com/anaticulae/elements/commit/5f300677c1a13238ca56efec1356a859b0855cc8))
+
+### Testing
+
+- **caption**: Extend caption checker
+  ([`71be8eb`](https://github.com/anaticulae/elements/commit/71be8eb8c388300e500117127b4b8208c9c0795d))
+
+- **caption**: Verify caption code
+  ([`69b31ab`](https://github.com/anaticulae/elements/commit/69b31ab3f34063f4cbcb6f7c97c21f1617d7b300))
+
+- **toc**: Extend test coverage
+  ([`550d704`](https://github.com/anaticulae/elements/commit/550d704006cf096c2a45b7a696f230fd8fce1efa))
+
+- **toc**: Validate toc
+  ([`402715e`](https://github.com/anaticulae/elements/commit/402715e4e0cc05ed059086a8d904f942aa68e092))
+
+
+## v0.16.3 (2022-02-22)
+
+### Bug Fixes
+
+- **headline**: Make regex robust vs timing problems
+  ([`bb6450d`](https://github.com/anaticulae/elements/commit/bb6450d429714d998681b3750c15bd8f09828a9a))
+
+### Chores
+
+- **project**: Add pytest timeout plugin
+  ([`bace092`](https://github.com/anaticulae/elements/commit/bace092ff0a6a0d83fb808b4f52a5eb89fb53d9b))
+
+
+## v0.16.2 (2022-02-16)
 
 ### Documentation
 
-* adjust method documentation (ba1f42997c80)
+- **fix**: Adjust method documentation
+  ([`ba1f429`](https://github.com/anaticulae/elements/commit/ba1f42997c80bab6c22c0034d18d991e103323df))
 
-## v0.16.1
+### Features
 
-### Feature
+- **API**: Extend public API
+  ([`141a2b3`](https://github.com/anaticulae/elements/commit/141a2b3e4624dd80863eea63a6f9393c77160544))
 
-* extend noheadline detector (c84653756c72)
+### Refactoring
 
-## v0.16.0
+- **lookup**: Fix spelling error
+  ([`861669d`](https://github.com/anaticulae/elements/commit/861669dae2a9217729827a6ac5d66082c3fc985d))
 
-### Feature
 
-* extend headline list (9ad1c6ea726e)
-* extend headline list (a3b512d2ba18)
-* extend noheadline detector (58269c2a72d3)
-* extend headline list (4a1985d09f68)
-* extend list of headlines (f4085fbaef55)
-* add `graph` as valid caption (bb995cbd178f)
-* add headlines to public API (2e94d639b784)
+## v0.16.1 (2022-02-07)
 
-### Fix
+### Features
 
-* return none instead of failing (9b4a7640f17f)
-* do not treat headline with high number as toc line (464693f67a28)
-* do not skip empty level as first one (1e3b5df4c20e)
-* improve stepped parser (22a67f5300ac)
-* flatten tocs to work on tocs directly (286c03d37fb7)
-* enable grouping non iterable items (ff0ca871897f)
+- **decider**: Extend noheadline detector
+  ([`c846537`](https://github.com/anaticulae/elements/commit/c84653756c72d427be766d0f9453e8c5e004bd30))
 
-### Documentation
 
-* fix modules path (1810213ada88)
+## v0.16.0 (2022-02-04)
 
-## v0.15.0
+### Bug Fixes
 
-### Feature
+- **headline**: Do not treat headline with high number as toc line
+  ([`464693f`](https://github.com/anaticulae/elements/commit/464693f67a284252aa3e5da733a9af524ad0a721))
 
-* add method to determine toc style (df3b494da5ff)
-* extend headlines lookup (4e1b82f626ce)
+- **headline**: Return none instead of failing
+  ([`9b4a764`](https://github.com/anaticulae/elements/commit/9b4a7640f17f74e264f54d561c9d026a48e48ce9))
 
-## v0.14.0
+- **toc**: Do not skip empty level as first one
+  ([`1e3b5df`](https://github.com/anaticulae/elements/commit/1e3b5df4c20eba710ef0734e05ac03c263cf3475))
 
-### Feature
+- **toc**: Enable grouping non iterable items
+  ([`ff0ca87`](https://github.com/anaticulae/elements/commit/ff0ca871897fb2184c62c9bd9c0c6c3ffe4244e8))
 
-* make toc decider length dependent (2facaf02bbd8)
-* add abstract headline (4d7d33ecfc1f)
+- **toc**: Flatten tocs to work on tocs directly
+  ([`286c03d`](https://github.com/anaticulae/elements/commit/286c03d37fb748f1603e889a9f97b6175184135f))
 
-## v0.13.1
+- **toc**: Improve stepped parser
+  ([`22a67f5`](https://github.com/anaticulae/elements/commit/22a67f5300ac4c65a5652807a435598d110698d1))
 
-### Feature
+### Chores
 
-* reduce required rate (856ee2839fef)
-* make toc check changeable from outside (53f8cc0b7a27)
+- **requirements**: Upgrade requirements.txt
+  ([`ecae438`](https://github.com/anaticulae/elements/commit/ecae4388b7f1a0de70818137b04b1acb463de3ee))
 
-## v0.13.0
+### Code Style
 
-### Feature
-
-* add method to distinguish between numbered and steps toc (ea17f2c3ae09)
-* use cache to reduce execution time (b19d98c04a4d)
-* add level steps parser (b65de459dd74)
-
-## v0.12.1
-
-## v0.12.0
-
-### Feature
-
-* extend chapter headlines (a6397a40bcc1)
-* add option to detect numbers with spaces inside (3e369cf5cc09)
-* treat quotes not as headline (224f370f27a0)
-* add method to check that line is a quote (5f4592ea0017)
-* skip bib line as potential headline (9c8fd09cf8b0)
-* add single char check (bbd6002b8360)
+- **caption**: Remove code duplication
+  ([`e432efc`](https://github.com/anaticulae/elements/commit/e432efca862e9941d6fc21a29c96cace7e4109ff))
 
 ### Documentation
 
-* Happy New Year! (a7878fe1d3cb)
+- **fix**: Fix modules path
+  ([`1810213`](https://github.com/anaticulae/elements/commit/1810213ada88d6a1e423cdf42e54c8e1f3cbe269))
 
-## v0.11.3
+### Features
 
-### Feature
+- **caption**: Add `graph` as valid caption
+  ([`bb995cb`](https://github.com/anaticulae/elements/commit/bb995cbd178ff2f877a5c6ee2f3915451096e376))
 
-* improve noheadline checker (61d8b04942f8)
-* add missing headline (204cc132a78f)
+- **elements**: Add headlines to public API
+  ([`2e94d63`](https://github.com/anaticulae/elements/commit/2e94d639b78485655496e2b9f676c05e114fb1ae))
 
-### Fix
+- **headline**: Extend headline list
+  ([`a3b512d`](https://github.com/anaticulae/elements/commit/a3b512d2ba18fabdc47e98a7f803f73896f62848))
 
-* improve single char check (2fc701390282)
+- **headline**: Extend noheadline detector
+  ([`58269c2`](https://github.com/anaticulae/elements/commit/58269c2a72d33c110f0c7b6bdc99c442ab789fe3))
 
-## v0.11.2
+- **lookup**: Extend headline list
+  ([`9ad1c6e`](https://github.com/anaticulae/elements/commit/9ad1c6ea726e88518b9b0cc53e4ed162c4ff4079))
 
-### Fix
+- **lookup**: Extend headline list
+  ([`4a1985d`](https://github.com/anaticulae/elements/commit/4a1985d09f6849b8194e73b6bb6fad7b3b291bbd))
 
-* do not handle single char headlines as no headline (76a05bd6a57f)
+- **lookup**: Extend list of headlines
+  ([`f4085fb`](https://github.com/anaticulae/elements/commit/f4085fbaef55c0e60b22d74f5d202f4792e53804))
 
-## v0.11.1
+### Testing
 
-### Fix
+- **caption**: Extend table test
+  ([`a4fee79`](https://github.com/anaticulae/elements/commit/a4fee79c674a0f59c53bc4164981ead94cb5089b))
 
-* make level pattern less strict (359910954823)
 
-## v0.11.0
+## v0.15.0 (2022-01-19)
 
-### Feature
+### Chores
 
-* reduce decision time (cd3dc96dc61e)
-* move headlines from sections (48b616bce68d)
-* use cache to reduce processing time (d24719681e45)
-* do not detect headlines with to low char rate in title (3610149795e6)
+- **requirements**: Upgrade requirements.txt
+  ([`80fc1a8`](https://github.com/anaticulae/elements/commit/80fc1a80b7b4783d07ea9a4264ffe881569f8d79))
 
-### Fix
+### Features
 
-* remove not reachable code (a94715e4bb66)
+- **lookup**: Extend headlines lookup
+  ([`4e1b82f`](https://github.com/anaticulae/elements/commit/4e1b82f626ce5278f44de828d750e454969a6b39))
+
+- **toc**: Add method to determine toc style
+  ([`df3b494`](https://github.com/anaticulae/elements/commit/df3b494da5ff223e5e1f15a60838177bfc538c43))
+
+
+## v0.14.0 (2022-01-17)
+
+### Chores
+
+- **project**: Move project config
+  ([`43ec6ae`](https://github.com/anaticulae/elements/commit/43ec6aed6afce8863e9e8f369fac9ee9cab5cdf1))
+
+- **requirements**: Add configo
+  ([`31e5f6c`](https://github.com/anaticulae/elements/commit/31e5f6cff31a35fb337b635bca0546136c1e48e7))
+
+### Features
+
+- **lookup**: Add abstract headline
+  ([`4d7d33e`](https://github.com/anaticulae/elements/commit/4d7d33ecfc1fe40cbeaab5d8b7aae9eac32ca76b))
+
+- **toc**: Make toc decider length dependent
+  ([`2facaf0`](https://github.com/anaticulae/elements/commit/2facaf02bbd81be09e0458b88171d3271b22bf3f))
+
+
+## v0.13.1 (2022-01-07)
+
+### Features
+
+- **toc**: Make toc check changeable from outside
+  ([`53f8cc0`](https://github.com/anaticulae/elements/commit/53f8cc0b7a271395a55cbf2cdb4e5d7c2c4c1af7))
+
+- **toc**: Reduce required rate
+  ([`856ee28`](https://github.com/anaticulae/elements/commit/856ee2839fefb287605c65d410381da9c95f3a01))
+
+### Refactoring
+
+- **toc**: Introduce holy value
+  ([`6a0f66d`](https://github.com/anaticulae/elements/commit/6a0f66d681d94c0106a4ca38d22352f3880c2f2e))
+
+
+## v0.13.0 (2022-01-04)
+
+### Features
+
+- **level**: Add level steps parser
+  ([`b65de45`](https://github.com/anaticulae/elements/commit/b65de459dd74c7757857a66fc97153822a4e7651))
+
+- **level**: Use cache to reduce execution time
+  ([`b19d98c`](https://github.com/anaticulae/elements/commit/b19d98c04a4daebfc19ecbb4d2ef3fae25829d4e))
+
+- **toc**: Add method to distinguish between numbered and steps toc
+  ([`ea17f2c`](https://github.com/anaticulae/elements/commit/ea17f2c3ae09932167e00643043a3b31b3da9f77))
+
+
+## v0.12.1 (2022-01-03)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`94f1cf2`](https://github.com/anaticulae/elements/commit/94f1cf2a4930af36f0e55b0806e3d917415a0093))
+
+
+## v0.12.0 (2022-01-01)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`26a5061`](https://github.com/anaticulae/elements/commit/26a5061743a55e42937b20e74429b0e99c7a5a41))
 
 ### Documentation
 
-* clarify interface documentation (3dbbbe96cbb5)
+- **copyright**: Happy New Year!
+  ([`a7878fe`](https://github.com/anaticulae/elements/commit/a7878fe1d3cbfe89c4add6d662551ebe53d2f29b))
 
-## v0.10.3
+### Features
 
-### Feature
+- **API**: Add single char check
+  ([`bbd6002`](https://github.com/anaticulae/elements/commit/bbd6002b83601b9769076ffe0f16e2b373650a71))
 
-* skip list item as possible headline (862e7c5a3423)
-* extend headlines list (b10317267a49)
+- **decider**: Skip bib line as potential headline
+  ([`9c8fd09`](https://github.com/anaticulae/elements/commit/9c8fd09cf8b018b7a4513be58c47108f14432500))
 
-## v0.10.2
+- **lookup**: Extend chapter headlines
+  ([`a6397a4`](https://github.com/anaticulae/elements/commit/a6397a40bcc1b1ebb7db7ad0017d4869e29e8068))
 
-### Fix
+- **noheadline**: Treat quotes not as headline
+  ([`224f370`](https://github.com/anaticulae/elements/commit/224f370f27a043107a4cefe75452c795bfb419d7))
 
-* improve negative caption lookup (025362f89f7f)
+- **pagenumber**: Add option to detect numbers with spaces inside
+  ([`3e369cf`](https://github.com/anaticulae/elements/commit/3e369cf5cc09401c4793965b6f4b2fdef0a71ed3))
 
-## v0.10.1
+- **quote**: Add method to check that line is a quote
+  ([`5f4592e`](https://github.com/anaticulae/elements/commit/5f4592ea0017726771345111147bff4fe5b759c7))
 
-### Fix
+### Refactoring
 
-* limit text too match long inputs with regex (79daf64f6665)
+- **decide**: Move simple decider first
+  ([`bc98e52`](https://github.com/anaticulae/elements/commit/bc98e520d19a4a51d7e458eb010d455791cad0ad))
 
-## v0.10.0
+- **decide**: Reduce complexity
+  ([`4c8b206`](https://github.com/anaticulae/elements/commit/4c8b206f829b368350ff8385c0f94cb49373181c))
 
-### Feature
 
-* add table caption checker (9918106aa1d7)
-* add single character as figure number (14a38495cab3)
+## v0.11.3 (2021-12-27)
 
-## v0.9.0
+### Bug Fixes
 
-### Feature
+- **decide**: Improve single char check
+  ([`2fc7013`](https://github.com/anaticulae/elements/commit/2fc7013902821f6d02a39ad5964c1ca94512e1d9))
 
-* add code caption detector (a911bf83a0af)
-* add valid headline (ac3680609189)
-* strip input data (d4151093105f)
+### Chores
 
-## v0.8.0
+- **requirements**: Upgrade requirements.txt
+  ([`92c1c9a`](https://github.com/anaticulae/elements/commit/92c1c9a9e070da033c9711f1038ed304d4e4e11c))
 
-### Feature
+### Features
 
-* add method to check against caption line (f22fb87b6bf2)
+- **decide**: Improve noheadline checker
+  ([`61d8b04`](https://github.com/anaticulae/elements/commit/61d8b04942f8d01093c0083fda2b5c9f582c5a35))
 
-## v0.7.0
+- **headline**: Add missing headline
+  ([`204cc13`](https://github.com/anaticulae/elements/commit/204cc132a78fca562f7874b085af8a7b4f4f5c43))
 
-### Feature
 
-* extend headline list (288b048dbba8)
+## v0.11.2 (2021-12-27)
 
-## v0.6.1
+### Bug Fixes
 
-### Fix
+- **decider**: Do not handle single char headlines as no headline
+  ([`76a05bd`](https://github.com/anaticulae/elements/commit/76a05bd6a57fbc915ee89ebb5f5c4b11a5cb23b0))
 
-* strip after replacing (4cfeef80ad68)
+### Chores
 
-## v0.6.0
+- **requirements**: Upgrade requirements.txt
+  ([`78056c5`](https://github.com/anaticulae/elements/commit/78056c54c6e7ffa9168b0eb9675eb2b8c6861f0a))
 
-### Feature
+### Refactoring
 
-* move method to verify page number (983870231c00)
+- **decide**: Simplify code
+  ([`b5cbd97`](https://github.com/anaticulae/elements/commit/b5cbd97a1f38c74f43cef1d3e11246bbf8c6977f))
 
-## v0.5.2
+### Testing
 
-### Fix
+- **headline**: Ensure that single char headline works correctly
+  ([`8b86243`](https://github.com/anaticulae/elements/commit/8b862430c76ca4fe3da0b0a2897d6b6b6bc746ce))
 
-* swap arguments (078a50f518b7)
 
-## v0.5.1
+## v0.11.1 (2021-11-26)
 
-## v0.5.0
+### Bug Fixes
 
-### Feature
+- **level**: Make level pattern less strict
+  ([`3599109`](https://github.com/anaticulae/elements/commit/35991095482361b00da30f284501e6a9f999e333))
 
-* add method to verify if headline is table of content (eb9379604be2)
+### Refactoring
 
-## v0.4.3
+- **toc**: Use new valid headline list
+  ([`2a944a1`](https://github.com/anaticulae/elements/commit/2a944a110894915f4af145818c07ed2cd99a2806))
 
-### Feature
 
-* add appendix level (3cbe0cced5bf)
+## v0.11.0 (2021-11-23)
 
-## v0.4.2
+### Bug Fixes
 
-### Feature
-
-* add `Kapitel 1:`-pattern to leveled parser (f9f7b00cd157)
-
-## v0.4.1
-
-### Feature
-
-* extend public API (cd86e62c7bc6)
-
-### Fix
-
-* fix spelling error (80ebe28e1712)
-
-## v0.4.0
-
-### Feature
-
-* add parameter to change max dots in headline (20b48623584c)
-* use no headline check to improve headline parser (7df60e50036b)
-* add char headline pattern (73b5a8b4766e)
-* add level four char pattern (ca835c662363)
-
-## v0.3.3
-
-### Feature
-
-* introduce invalid roman page numbers (1ce04c4679f8)
-
-### Fix
-
-* fix 988f3482e8e8b refactoring (6f760af9e62f)
-
-## v0.3.2
-
-### Feature
-
-* externalize parameter for noheadline check (988f3482e8e8)
-
-## v0.3.1
-
-### Feature
-
-* extend public API (5caebae93d7c)
+- **parser**: Remove not reachable code
+  ([`a94715e`](https://github.com/anaticulae/elements/commit/a94715e4bb66313dde74e4c6d7ffc999430da2aa))
 
 ### Documentation
 
-* Happy New Year! (791406b572f4)
+- **headline**: Clarify interface documentation
+  ([`3dbbbe9`](https://github.com/anaticulae/elements/commit/3dbbbe96cbb581657204b27d005228abe0d3124d))
 
-## v0.3.0
+### Features
 
-### Feature
+- **headline**: Do not detect headlines with to low char rate in title
+  ([`3610149`](https://github.com/anaticulae/elements/commit/3610149795e642bab030aa33d4a4d8aae8136f8f))
 
-* move toc and pagenumber code (05e93c17602c)
+- **headline**: Reduce decision time
+  ([`cd3dc96`](https://github.com/anaticulae/elements/commit/cd3dc96dc61e051e4de9ec89d86725c0b135b30c))
 
-## v0.2.1
+- **headline**: Use cache to reduce processing time
+  ([`d247196`](https://github.com/anaticulae/elements/commit/d24719681e45ee4dd964230246a94d6395d35b47))
 
-### Fix
+- **move**: Move headlines from sections
+  ([`48b616b`](https://github.com/anaticulae/elements/commit/48b616bce68d47010136d3931c49b221ba3bff4d))
 
-* do not ignore long headlines (bf679a291f05)
+### Refactoring
 
-## v0.2.0
+- **decide**: Shorten code
+  ([`97e7204`](https://github.com/anaticulae/elements/commit/97e7204c3a6f6019539a9d52fe4299567fc6252a))
 
-### Feature
+- **headline**: Clarify code
+  ([`949f397`](https://github.com/anaticulae/elements/commit/949f3973df92d8b640dddcbcf67762643bde5ef4))
 
-* add strict flag to make headline check more strict (0dfd328b1d50)
-* extend valid headline list (125e947018a3)
+- **headline**: Improve package structure
+  ([`53b5ac1`](https://github.com/anaticulae/elements/commit/53b5ac144c37179e5ee97d5eb26e8f345fe0a436))
 
-## v0.1.2
+- **headline**: Move to separate package
+  ([`cd03b2d`](https://github.com/anaticulae/elements/commit/cd03b2de419b3339de34a4b4c7409ffd7c2e8901))
 
-### Fix
+- **headline**: Replace with utila code
+  ([`1ab4dbb`](https://github.com/anaticulae/elements/commit/1ab4dbb6be8c2065b20ac05a3fac75467b563a73))
 
-* parse late to use other checks before (f7a15b08618b)
+### Testing
 
-## v0.1.1
+- **headline**: Increase test coverage
+  ([`5a93d6f`](https://github.com/anaticulae/elements/commit/5a93d6f287caac17415a29e27cfd92cc3a9c2a41))
 
-### Feature
+- **refactor**: Improve test code
+  ([`f664330`](https://github.com/anaticulae/elements/commit/f664330568e42395624a22ebedb6d82c4eb1bd98))
 
-* extend noheadline check (6e403bc2364e)
 
-## v0.1.0
+## v0.10.3 (2021-11-20)
 
-### Feature
+### Chores
 
-* add method to decide if token is a headline (d6cc18557a0d)
-* add method to determine headline level (73a156cf4a3e)
+- **requirements**: Upgrade requirements.txt
+  ([`6db5f16`](https://github.com/anaticulae/elements/commit/6db5f1620f4c893b0208ce474aedb6d518e72bdf))
 
-## v0.0.0 Initial release
+### Features
+
+- **headline**: Extend headlines list
+  ([`b103172`](https://github.com/anaticulae/elements/commit/b10317267a498ebe104cf3340d2808d30bad5a12))
+
+- **headline**: Skip list item as possible headline
+  ([`862e7c5`](https://github.com/anaticulae/elements/commit/862e7c5a3423de79c92c9ddad200b0bcbe6c61e6))
+
+
+## v0.10.2 (2021-10-11)
+
+### Bug Fixes
+
+- **caption**: Improve negative caption lookup
+  ([`025362f`](https://github.com/anaticulae/elements/commit/025362f89f7f6559b33cc1d674ed620f75b01e4d))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`0825a43`](https://github.com/anaticulae/elements/commit/0825a439fb333811fc417cf8134360828b4d8f57))
+
+
+## v0.10.1 (2021-10-10)
+
+### Bug Fixes
+
+- **caption**: Limit text too match long inputs with regex
+  ([`79daf64`](https://github.com/anaticulae/elements/commit/79daf64f6665319295a3a09fda89f642d6760ddd))
+
+
+## v0.10.0 (2021-10-10)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`4cf6610`](https://github.com/anaticulae/elements/commit/4cf6610c7753a2ebe4b12ac9aaeb011a8cce57aa))
+
+### Features
+
+- **caption**: Add single character as figure number
+  ([`14a3849`](https://github.com/anaticulae/elements/commit/14a38495cab3f4bce22ffdd82ebc83adfc492906))
+
+- **caption**: Add table caption checker
+  ([`9918106`](https://github.com/anaticulae/elements/commit/9918106aa1d7ce2f997a3ca48e53b3e8d371ef72))
+
+### Refactoring
+
+- **caption**: Clarify naming
+  ([`87ee524`](https://github.com/anaticulae/elements/commit/87ee5245d8a177b84b54d943a942a965e0f06cd4))
+
+- **caption**: Unite to a single regex
+  ([`2b9178b`](https://github.com/anaticulae/elements/commit/2b9178b72a0fca668d8b6365521b97f52ec7d515))
+
+### Testing
+
+- **refactor**: Simplify code
+  ([`cfe5139`](https://github.com/anaticulae/elements/commit/cfe5139d6a0eecfa8c193cc2f5392c18af4398c5))
+
+
+## v0.9.0 (2021-09-13)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`bc27c8c`](https://github.com/anaticulae/elements/commit/bc27c8c6c2b237dc440d80a13879749f648d78c4))
+
+### Features
+
+- **caption**: Add code caption detector
+  ([`a911bf8`](https://github.com/anaticulae/elements/commit/a911bf83a0afe6d2905db95375800b84021808b0))
+
+- **caption**: Strip input data
+  ([`d415109`](https://github.com/anaticulae/elements/commit/d4151093105fd2e4e0a3c81127df8bda7d50221f))
+
+- **headline**: Add valid headline
+  ([`ac36806`](https://github.com/anaticulae/elements/commit/ac3680609189859040bd87a876993e9bba2f16d8))
+
+### Refactoring
+
+- **headline**: Replace with utila code
+  ([`5ef86ae`](https://github.com/anaticulae/elements/commit/5ef86ae482df5e407b6d79a6d7c7473ee23c38e2))
+
+- **level**: Simplify code
+  ([`528ed4c`](https://github.com/anaticulae/elements/commit/528ed4ce6b67afd24ff00dc7b3ae99985c2c4fe6))
+
+- **style**: Use upper cased headlines
+  ([`81d2630`](https://github.com/anaticulae/elements/commit/81d263044c5fd6f07f1a105d3e23a40428bf0c1a))
+
+### Testing
+
+- **headline**: Add test to verify noheadline pattern
+  ([`dcde072`](https://github.com/anaticulae/elements/commit/dcde07237fda696af774419e75d5a2292207861a))
+
+
+## v0.8.0 (2021-07-31)
+
+### Features
+
+- **caption**: Add method to check against caption line
+  ([`f22fb87`](https://github.com/anaticulae/elements/commit/f22fb87b6bf20e158c4345fc4de8b4fe85a29f6f))
+
+
+## v0.7.0 (2021-07-02)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`b156a85`](https://github.com/anaticulae/elements/commit/b156a851ccfd121818d1d6be99b349338dc47136))
+
+### Features
+
+- **headlines**: Extend headline list
+  ([`288b048`](https://github.com/anaticulae/elements/commit/288b048dbba8a5df2b65c0ba1a9fb8f298b09dcf))
+
+### Refactoring
+
+- **headline**: Simplify code
+  ([`8eee85f`](https://github.com/anaticulae/elements/commit/8eee85f60519a2747aff86f8a32134cfe85f97bd))
+
+
+## v0.6.1 (2021-05-28)
+
+### Bug Fixes
+
+- **pagenumber**: Strip after replacing
+  ([`4cfeef8`](https://github.com/anaticulae/elements/commit/4cfeef80ad68c8b7414a9b97b07da074b9e5bd12))
+
+### Testing
+
+- **pagenumber**: Move negative page number test
+  ([`bd24b86`](https://github.com/anaticulae/elements/commit/bd24b863576d5f6a2228ddce0871756ffa8067c0))
+
+
+## v0.6.0 (2021-05-28)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`393d62d`](https://github.com/anaticulae/elements/commit/393d62db81b22667475e61b2c1718fda188a0fe6))
+
+### Code Style
+
+- **format**: Format code
+  ([`5608206`](https://github.com/anaticulae/elements/commit/5608206bbb38df587034cbc71a6a6d1d18752fc0))
+
+### Features
+
+- **pagenumber**: Move method to verify page number
+  ([`9838702`](https://github.com/anaticulae/elements/commit/983870231c0015cef3dacf5ca3f605c7578fa115))
+
+
+## v0.5.2 (2021-05-22)
+
+### Bug Fixes
+
+- **toc**: Swap arguments
+  ([`078a50f`](https://github.com/anaticulae/elements/commit/078a50f518b7aa893353ec2a7331a63a213fe8a9))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`88d8836`](https://github.com/anaticulae/elements/commit/88d88364458dc8c0c8df16cd7f21c5b231f934d4))
+
+### Refactoring
+
+- **replace**: Replace with utila code
+  ([`ac1e31c`](https://github.com/anaticulae/elements/commit/ac1e31c13c7076ebcedd0c01f4bff0912bca3906))
+
+
+## v0.5.1 (2021-05-12)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`5df0b79`](https://github.com/anaticulae/elements/commit/5df0b7940dbc36601446aaeb553582a30a0b2e77))
+
+
+## v0.5.0 (2021-05-12)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`0e2406e`](https://github.com/anaticulae/elements/commit/0e2406eddde4b61ab14fe8e089cb818c7be37d16))
+
+### Features
+
+- **toc**: Add method to verify if headline is table of content
+  ([`eb93796`](https://github.com/anaticulae/elements/commit/eb9379604be2c82eec42951369d77c7842d0e890))
+
+
+## v0.4.3 (2021-04-30)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`bc137b3`](https://github.com/anaticulae/elements/commit/bc137b34d89e8405afc1ddde07a465f60a3a404e))
+
+### Features
+
+- **level**: Add appendix level
+  ([`3cbe0cc`](https://github.com/anaticulae/elements/commit/3cbe0cced5bf8c108b217b20ad34c755eaca5941))
+
+### Refactoring
+
+- **level**: Simplify regex
+  ([`a239280`](https://github.com/anaticulae/elements/commit/a239280cea32be640ecfd3964cdadca30910263e))
+
+
+## v0.4.2 (2021-03-31)
+
+### Features
+
+- **level**: Add `Kapitel 1:`-pattern to leveled parser
+  ([`f9f7b00`](https://github.com/anaticulae/elements/commit/f9f7b00cd157cba4c90eebad20178e7139843c1f))
+
+### Refactoring
+
+- **test**: Move doctests to cleanup method header
+  ([`de10973`](https://github.com/anaticulae/elements/commit/de109731339e7e2c9a79ad8d92b7195b232f931a))
+
+
+## v0.4.1 (2021-03-29)
+
+### Bug Fixes
+
+- **headline**: Fix spelling error
+  ([`80ebe28`](https://github.com/anaticulae/elements/commit/80ebe28e1712f457dc580c32447878c8a15281cf))
+
+### Features
+
+- **API**: Extend public API
+  ([`cd86e62`](https://github.com/anaticulae/elements/commit/cd86e62c7bc61b731097b947c21945af6f5ffd54))
+
+
+## v0.4.0 (2021-03-27)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`6a6513f`](https://github.com/anaticulae/elements/commit/6a6513f3b80cc660231b037aec6f91800d23ec1f))
+
+### Features
+
+- **headline**: Add char headline pattern
+  ([`73b5a8b`](https://github.com/anaticulae/elements/commit/73b5a8b4766e2c5cca0994eabfcd584fb67c25c9))
+
+- **headline**: Add parameter to change max dots in headline
+  ([`20b4862`](https://github.com/anaticulae/elements/commit/20b48623584ce9e45144fd2a9741f5928045c788))
+
+- **headline**: Use no headline check to improve headline parser
+  ([`7df60e5`](https://github.com/anaticulae/elements/commit/7df60e50036b6a4fcc0a3a8dec87bca7ab2b04e7))
+
+- **level**: Add level four char pattern
+  ([`ca835c6`](https://github.com/anaticulae/elements/commit/ca835c662363f6dc4e86e5bd0a28b0f43c1d51cf))
+
+### Testing
+
+- **headline**: Add test with invalid headlines
+  ([`f57a722`](https://github.com/anaticulae/elements/commit/f57a722cff741b4bd17af0432b00c1b5c9552cfe))
+
+
+## v0.3.3 (2021-01-27)
+
+### Bug Fixes
+
+- **headline**: Fix 988f3482e8e8b refactoring
+  ([`6f760af`](https://github.com/anaticulae/elements/commit/6f760af9e62ff4c5f92991835a71c1d53cb340a7))
+
+### Features
+
+- **pagenumber**: Introduce invalid roman page numbers
+  ([`1ce04c4`](https://github.com/anaticulae/elements/commit/1ce04c4679f8a56fb23b121f1b960b5c065bab2f))
+
+
+## v0.3.2 (2021-01-26)
+
+### Features
+
+- **headline**: Externalize parameter for noheadline check
+  ([`988f348`](https://github.com/anaticulae/elements/commit/988f3482e8e8b51e316b8d729d33d6490086daf8))
+
+
+## v0.3.1 (2021-01-25)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`143c85c`](https://github.com/anaticulae/elements/commit/143c85ca875246a5156a436135495e2459237532))
+
+### Documentation
+
+- **copyright**: Happy New Year!
+  ([`791406b`](https://github.com/anaticulae/elements/commit/791406b572f4580d03f890f09ad5097be42d0eff))
+
+### Features
+
+- **API**: Extend public API
+  ([`5caebae`](https://github.com/anaticulae/elements/commit/5caebae93d7cfac4e8edd88df4425112af3f9e00))
+
+
+## v0.3.0 (2021-01-16)
+
+### Chores
+
+- **requirements**: Add iamraw package
+  ([`5494fb2`](https://github.com/anaticulae/elements/commit/5494fb251a8b021ca7c99a265b523df11bddc1c2))
+
+- **requirements**: Upgrade requirements.txt
+  ([`deb7d75`](https://github.com/anaticulae/elements/commit/deb7d7531b8d97fcf6808ec4871e12608a0e23be))
+
+### Features
+
+- **move**: Move toc and pagenumber code
+  ([`05e93c1`](https://github.com/anaticulae/elements/commit/05e93c17602c5f56e51358d37e5f0683c28840f6))
+
+
+## v0.2.1 (2021-01-12)
+
+### Bug Fixes
+
+- **headline**: Do not ignore long headlines
+  ([`bf679a2`](https://github.com/anaticulae/elements/commit/bf679a291f05c48d155382978b071450a98c305e))
+
+
+## v0.2.0 (2021-01-08)
+
+### Features
+
+- **headline**: Add strict flag to make headline check more strict
+  ([`0dfd328`](https://github.com/anaticulae/elements/commit/0dfd328b1d50725e39a95047c8c2f79d0513c137))
+
+- **headline**: Extend valid headline list
+  ([`125e947`](https://github.com/anaticulae/elements/commit/125e947018a32849edde5c7ef03dabf63997066a))
+
+
+## v0.1.2 (2021-01-08)
+
+### Bug Fixes
+
+- **headline**: Parse late to use other checks before
+  ([`f7a15b0`](https://github.com/anaticulae/elements/commit/f7a15b08618b1a5f0a167595074cf3f6b387692d))
+
+
+## v0.1.1 (2021-01-08)
+
+### Features
+
+- **headline**: Extend noheadline check
+  ([`6e403bc`](https://github.com/anaticulae/elements/commit/6e403bc2364ee3e1fe52347104679c2cd04b0716))
+
+
+## v0.1.0 (2021-01-08)
+
+### Chores
+
+- **requirements**: Add utila package
+  ([`836ad60`](https://github.com/anaticulae/elements/commit/836ad606e07476a5cf158282f1d9c8e2df9b2328))
+
+### Features
+
+- **headline**: Add method to decide if token is a headline
+  ([`d6cc185`](https://github.com/anaticulae/elements/commit/d6cc18557a0dd07444224b61d5b354c84bbb0b8d))
+
+- **level**: Add method to determine headline level
+  ([`73a156c`](https://github.com/anaticulae/elements/commit/73a156cf4a3e7f881c8ea8966d31daf91279c272))
+
+
+## v0.0.0 (2021-01-08)
+
+- Initial Release
