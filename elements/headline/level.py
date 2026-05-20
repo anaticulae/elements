@@ -10,11 +10,11 @@
 import contextlib
 import re
 
-import configo
-import utila
+import configos
+import utilo
 
 
-@configo.cache_large
+@configos.cache_large
 def level_numbered(raw: str) -> int:
     """Convert number to raw level.
 
@@ -48,7 +48,7 @@ def level_numbered(raw: str) -> int:
     return None
 
 
-@configo.cache_large
+@configos.cache_large
 def level_steps(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
@@ -98,8 +98,8 @@ def level_steps(raw: str) -> int:  # pylint:disable=R0911
     return None
 
 
-STEPS_ROMAN = utila.compiles(r'^(I|II|III|IIII|IV|V|VI|VII|VIII|VIII)\.?')
-STEPS_ROMAN_SUB = utila.compiles(r"""
+STEPS_ROMAN = utilo.compiles(r'^(I|II|III|IIII|IV|V|VI|VII|VIII|VIII)\.?')
+STEPS_ROMAN_SUB = utilo.compiles(r"""
     ^
     (I|II|III|IIII|IV|V|VI|VII|VIII|VIII)
     [ ]{0,1}
@@ -157,7 +157,7 @@ def level_numbered_chars(raw: str) -> int:
     return 4
 
 
-CHAPTER_PATTERN = utila.compiles(r"""
+CHAPTER_PATTERN = utilo.compiles(r"""
     ^(KAPITEL|CHAPTER)
     [ ]{0,3}
     (\d{1,2})

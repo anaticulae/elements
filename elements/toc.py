@@ -9,15 +9,15 @@
 
 import collections
 
-import configo
+import configos
 import iamraw
 import iamraw.toc
-import utila
+import utilo
 
 import elements.headline.level
 import elements.headline.lookup
 
-TOC_NUMBERED_RATE_MIN = configo.HolyRate(items=(
+TOC_NUMBERED_RATE_MIN = configos.HolyRate(items=(
     (1, 1),
     (5, 3),
     (8, 4),
@@ -30,11 +30,11 @@ TOC_NUMBERED_RATE_MIN = configo.HolyRate(items=(
     (60, 50),
 ))
 
-TOC_SECTIONS_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+TOC_SECTIONS_RATE_MIN = configos.HV_PERCENT_PLUS(default=65)
 
-TOC_STEPPED_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+TOC_STEPPED_RATE_MIN = configos.HV_PERCENT_PLUS(default=65)
 
-TOC_NOLEVEL_RATE_MIN = configo.HV_PERCENT_PLUS(default=65)
+TOC_NOLEVEL_RATE_MIN = configos.HV_PERCENT_PLUS(default=65)
 
 
 class InvalidTocItems(collections.UserList):  # pylint:disable=too-many-ancestors
@@ -64,7 +64,7 @@ def istoc(headline: str) -> bool:
     >>> istoc('Inhaltverzeichnis')
     True
     """
-    if utila.similar(
+    if utilo.similar(
             current=headline,
             expected=elements.headline.lookup.TOC,
             maxdiff=0.9,
@@ -120,11 +120,11 @@ def istocnolevel(toc) -> bool:
     return True
 
 
-LEVEL_SECTIONS_SECTION = utila.compiles(r'^(SECTION)[ ]{1,3}\d{1,2}\:')
-LEVEL_SECTIONS_PART = utila.compiles(r'^(PART)[ ]{1,3}\d{1,2}\:')
+LEVEL_SECTIONS_SECTION = utilo.compiles(r'^(SECTION)[ ]{1,3}\d{1,2}\:')
+LEVEL_SECTIONS_PART = utilo.compiles(r'^(PART)[ ]{1,3}\d{1,2}\:')
 
 
-@configo.cache_large
+@configos.cache_large
 def level_sections(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
@@ -177,7 +177,7 @@ def istocstepped(toc) -> bool:
     levels = [
         item for item in toc if elements.headline.level.level_steps(item.level)
     ]
-    rate = utila.rate_rel(
+    rate = utilo.rate_rel(
         levels,
         toc,
     )

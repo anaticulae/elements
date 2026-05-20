@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
-ABBREVIATION = utila.splitlines("""
+ABBREVIATION = utilo.splitlines("""
 ABBREVIATION
 ABBREVIATIONS
 ABBREVIATIONTABLE
@@ -21,7 +21,7 @@ ACRONYMS
 LIST OF ABBREVIATIONS
 """)
 
-ABSTRACT = utila.splitlines("""
+ABSTRACT = utilo.splitlines("""
 ABSTRACT
 ABSTRACT IN ENGLISH
 ABSTRACT OF THE DISSERTATION
@@ -34,7 +34,7 @@ KURZZUSAMMENFASSUNG
 ZUSAMMENFASSUNG
 """)
 
-ACKNOWLEDGE = utila.splitlines("""
+ACKNOWLEDGE = utilo.splitlines("""
 ACKNOWLEDGE
 ACKNOWLEDGEMENT
 ACKNOWLEDGEMENTS
@@ -45,7 +45,7 @@ DANKSAGUNGEN/WIDMUNGEN
 DEDICATION
 """)
 
-APPENDIX = utila.splitlines("""
+APPENDIX = utilo.splitlines("""
 ANHANG
 ANHANGSVERZEICHNIS
 APPENDICES
@@ -83,7 +83,7 @@ VERZEICHNISSE
 VORBEMERKUNG ZUR EDITION
 """)
 
-BIBLIOGRAPHY = utila.splitlines("""
+BIBLIOGRAPHY = utilo.splitlines("""
 AUFSÄTZE
 AUFSÄTZE AUS SAMMELWERKEN/HERAUSGEBERSCHRIFTEN
 AUFSÄTZE AUS ZEITSCHRIFTEN
@@ -117,7 +117,7 @@ WEITERFÜHRENDE LITERATUR
 ZEITSCHRIFTENARTIKEL
 """)
 
-PUBLICATION = utila.splitlines("""
+PUBLICATION = utilo.splitlines("""
 Publikationen
 Publikation
 Publications
@@ -127,7 +127,7 @@ Veröffentlichungen
 Konferenzbeiträge
 """)
 
-CHAPTER = utila.splitlines("""
+CHAPTER = utilo.splitlines("""
 AUFBAU
 AUFBAU UND GLIEDERUNG
 AUSBLICK
@@ -169,20 +169,20 @@ ZUSAMMENFASSUNG & AUSBLICK
 ZUSAMMENFASSUNG UND AUSBLICK
 """)
 
-FIGURETABLE = utila.splitlines("""
+FIGURETABLE = utilo.splitlines("""
 ABBILDUNGEN
 ABBILDUNGSVERZEICHNIS
 LIST OF FIGURES
 """)
 
-GLOSSARY = utila.splitlines("""
+GLOSSARY = utilo.splitlines("""
 GLOSSAR
 GLOSSAR / KLÄRUNG RELEVANTER BEGRIFFE
 GLOSSARY
 STICHWORTVERZEICHNIS
 """)
 
-LEGAL = utila.splitlines("""
+LEGAL = utilo.splitlines("""
 EHRENWÖRTLICHE ERKLÄRUNG
 EIDESSTATTLICHE ERKLÄRUNG
 EIDESSTATTLICHE VERSICHERUNG
@@ -191,7 +191,7 @@ VERSICHERUNG AN EIDES STATT
 VERSICHERUNG SELBSTÄNDIGER ARBEIT
 """)
 
-SYMBOLTABLE = utila.splitlines("""
+SYMBOLTABLE = utilo.splitlines("""
 ABKÜRZUNG UND NOMENKLATUR
 ABKÜRZUNGSVERZEICHNIS
 NOMENKLATUR
@@ -202,13 +202,13 @@ SYMBOLVERZEICHNIS
 VERZEICHNIS DER VERWENDETEN ABKÜRZUNGEN
 """)
 
-TABLETABLE = utila.splitlines("""
+TABLETABLE = utilo.splitlines("""
 LIST OF TABLES
 TABELLEN
 TABELLENVERZEICHNIS
 """)
 
-TOC = utila.splitlines("""
+TOC = utilo.splitlines("""
 CONTENTS
 CONTENT
 CONTENU
@@ -219,18 +219,18 @@ TABLE OF CONTENTS
 TABLE OF CONTENT
 """)
 
-UTILS = utila.splitlines("""
+UTILS = utilo.splitlines("""
 PUBLICATIONS
 FORMELVERZEICHNIS
 VORWORT
 """)
 
-VITAE = utila.splitlines("""
+VITAE = utilo.splitlines("""
 CURRICULUM VITAE
 LEBENSLAUF
 """)
 
-LISTINGS = utila.splitlines("""
+LISTINGS = utilo.splitlines("""
 LISTING
 LISTINGS
 VERZEICHNIS DER LISTINGS

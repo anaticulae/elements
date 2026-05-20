@@ -7,8 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
-import utila
+import configos
+import utilo
 
 import elements
 import elements.headline
@@ -46,18 +46,18 @@ def parse_headline(raw: str, before=None) -> tuple:
             #   ANHANG 2: SUMMARY
             level = 2
         return title, level, rawlevel
-    if utila.similar(elements.HEADLINES, raw):
+    if utilo.similar(elements.HEADLINES, raw):
         return raw, 1, ''
     if before:
         # look back and check for `Kapitel-X-Pattern`
-        before = utila.normalize_text(before, normalize_spaces=True)
+        before = utilo.normalize_text(before, normalize_spaces=True)
         chapter = elements.noheadline_pattern(before)
         if chapter:
             return raw, 1, ''
     return None
 
 
-@configo.cache_large
+@configos.cache_large
 def parse_leveled_headline(line: str):
     line = line.strip()
     matched = HEADLINE.match(line)
@@ -69,7 +69,7 @@ def parse_leveled_headline(line: str):
     return None
 
 
-@configo.cache_large
+@configos.cache_large
 def parse_chapter_level(raw: str) -> tuple:
     """\
     >>> parse_chapter_level('KAPITEL 1: EINLEITUNG')
@@ -84,7 +84,7 @@ def parse_chapter_level(raw: str) -> tuple:
     return title, rawlevel
 
 
-HEADLINE = utila.compiles(r"""
+HEADLINE = utilo.compiles(r"""
     ^
     (?P<level>(\d{1,2}\.?){1,4}\d{0,2})
     [ ]{1,5}
@@ -92,7 +92,7 @@ HEADLINE = utila.compiles(r"""
     $
 """)
 
-CHARACTER_HEADLINE = utila.compiles(r"""
+CHARACTER_HEADLINE = utilo.compiles(r"""
     ^
     (?P<level>([a-z]{1,2}\.){1,4}[a-z\d]{0,2})
     [ ]{1,5}
@@ -100,7 +100,7 @@ CHARACTER_HEADLINE = utila.compiles(r"""
     $
 """)
 
-HEADLINE_CHAPTER = utila.compiles(r"""
+HEADLINE_CHAPTER = utilo.compiles(r"""
     ^
     (?P<rawlevel>
         (KAPITEL|CHAPTER|ANHANG|APPENDIX)

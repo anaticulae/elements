@@ -454,4 +454,3 @@ Every noteable change is logged here.
 * add method to determine headline level (73a156cf4a3e)
 
 ## v0.0.0 Initial release
-

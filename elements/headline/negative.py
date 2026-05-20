@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 
 def noheadline(text: str) -> bool:
@@ -21,13 +21,13 @@ def noheadline(text: str) -> bool:
     text = text.lower()
     if text in NOHEADLINE:
         return True
-    text = utila.normalize_whitespaces(text)
+    text = utilo.normalize_whitespaces(text)
     if text in NOHEADLINE:
         return True
     return False
 
 
-NOHEADLINE = utila.splitlines("""\
+NOHEADLINE = utilo.splitlines("""\
 name
 vorgelegt von
 promotionsausschuss

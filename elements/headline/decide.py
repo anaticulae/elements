@@ -10,8 +10,8 @@
 import re
 import statistics
 
-import configo
-import utila
+import configos
+import utilo
 
 import elements
 import elements.headline.lookup
@@ -19,7 +19,7 @@ import elements.headline.negative
 import elements.headline.parser
 
 
-@configo.cache_large
+@configos.cache_large
 def isheadline(line: str, strict: bool = True) -> bool:
     """\
     >>> isheadline('1. Einleitung', strict=False)
@@ -38,7 +38,7 @@ def isheadline(line: str, strict: bool = True) -> bool:
     True
     """
     line = line.strip()
-    if utila.verysimilar(current=line, expected=elements.HEADLINES):
+    if utilo.verysimilar(current=line, expected=elements.HEADLINES):
         return True
     if not strict and elements.headline.parser.parse_headline(line):
         if noheadline(line):
@@ -47,10 +47,10 @@ def isheadline(line: str, strict: bool = True) -> bool:
     return False
 
 
-HEADLINE_CHAR_RATE_MIN = configo.HV_PERCENT_PLUS(default=25)
+HEADLINE_CHAR_RATE_MIN = configos.HV_PERCENT_PLUS(default=25)
 
 
-@configo.cache_large
+@configos.cache_large
 def noheadline(  # pylint:disable=R0911,R1260
     line: str,
     length_min: int = 5,
@@ -108,7 +108,7 @@ def noheadline(  # pylint:disable=R0911,R1260
     parsed = elements.headline.parser.parse_headline(line)
     if parsed:
         # title
-        if utila.char_rate(parsed[0]) < 0.5:
+        if utilo.char_rate(parsed[0]) < 0.5:
             return True
     if elements.isquote(line):
         return True
@@ -116,7 +116,7 @@ def noheadline(  # pylint:disable=R0911,R1260
         return True
     if isheadline(line, strict=strict):
         return False
-    if utila.char_rate(line) < HEADLINE_CHAR_RATE_MIN:
+    if utilo.char_rate(line) < HEADLINE_CHAR_RATE_MIN:
         return True
     return False
 
@@ -164,20 +164,20 @@ def too_many_invalid_headline_chars(text: str) -> bool:
     special = 0
     for char in '+-=_!@#$%^&*':
         special += text.count(char)
-    special += len(utila.parse_ints(text))
+    special += len(utilo.parse_ints(text))
     if special > 5:
         return True
     return False
 
 
-HTTP = utila.compiles(r"""
+HTTP = utilo.compiles(r"""
     http
     [s]{0,1}
     \:
     //
 """)
 # 2 background          9
-TOCLINE = utila.compiles(r"""
+TOCLINE = utilo.compiles(r"""
     ^
     \d{1,2}
     .{3,120}
@@ -187,7 +187,7 @@ TOCLINE = utila.compiles(r"""
 """)
 # [77] Alexander Keller. Methods and Apparatus for Topology Discovery
 # [Fos10] FOSTER, Elvis C.: Software Engineering
-BIBLINE = utila.compiles(r"""
+BIBLINE = utilo.compiles(r"""
     ^
     \[
         \s{0,2}
@@ -199,7 +199,7 @@ BIBLINE = utila.compiles(r"""
     \]
 """)
 # 8. Auflage, Springer-Verlag, Heidelberg (2010)
-BIBLINE_AUFLAGE = utila.compiles(r"""
+BIBLINE_AUFLAGE = utilo.compiles(r"""
     ^
     \d{1,2}\.
     [ ]{0,2}
@@ -210,7 +210,7 @@ BIBLINE_AUFLAGE = utila.compiles(r"""
 # \uF0B7
 LISTSTART = '•\uf0a7\uf0b7'
 WHITELINE = '          '
-ABBR_START = utila.compiles(r"""
+ABBR_START = utilo.compiles(r"""
     ^
     (
         d\.h\.|
@@ -224,7 +224,7 @@ ABBR_START = utila.compiles(r"""
         \d{2}\.\d{2}\.\d{2} # TODO: MOVE THIS DATE
     )
 """)
-PERSON = utila.compiles(r"""
+PERSON = utilo.compiles(r"""
     (
         prof\.[ ]{1,3}dr\.|
         dr\.(\-|[ ]{1,3})ing\.
@@ -232,7 +232,7 @@ PERSON = utila.compiles(r"""
 """)
 
 
-@configo.cache_large
+@configos.cache_large
 def noheadline_pattern(item: str) -> bool:
     """\
     >>> noheadline_pattern('KAPITEL  1 ')
@@ -252,7 +252,7 @@ def noheadline_pattern(item: str) -> bool:
     return False
 
 
-@configo.cache_large
+@configos.cache_large
 def singlechar(text: str) -> bool:
     """\
     >>> singlechar('A B S T R A C T')

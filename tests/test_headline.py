@@ -8,17 +8,17 @@
 # =============================================================================
 
 import pytest
-import utila
+import utilo
 
 import elements
 
-NOT_IS_HEADLINE = utila.splitlines("""\
+NOT_IS_HEADLINE = utilo.splitlines("""\
 2.3. Ermittelte charakteristische Punkte mit Standardabweichung . . . . . 7
 Abbildung 1.3.: Impulsfolgegruppe besteht aus drei Impulsfolgen
 Gutachter: Prof. Dr. Gjorgji Madjarov
 """)
 
-NOHEADLINE = utila.splitlines("""\
+NOHEADLINE = utilo.splitlines("""\
 Gutachter: Prof. Dr. Gjorgji Madjarov
 - Dr.-Ing. -
 Vorsitzender: Prof. Dr. Florian Tschorsch Gutachter: Prof. Dr. Odej Kao

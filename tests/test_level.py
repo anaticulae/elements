@@ -8,11 +8,11 @@
 # =============================================================================
 
 import pytest
-import utila
+import utilo
 
 import elements
 
-HEADLINE_LEVEL = utila.splitlines("""\
+HEADLINE_LEVEL = utilo.splitlines("""\
 1   2. Zentrum
 2   2.1 Anhang
 2   2..1... Fehlerfrei
@@ -30,7 +30,7 @@ def test_headline_level(line):
     assert level == expected
 
 
-NOHEADLINE_LEVEL = utila.splitlines("""\
+NOHEADLINE_LEVEL = utilo.splitlines("""\
 2020 This is not a headline level
 04.03.2016. No Headline
 """)

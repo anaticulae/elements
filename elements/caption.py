@@ -7,8 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
-import utila
+import configos
+import utilo
 
 PATTERN = r"""
     ^
@@ -29,7 +29,7 @@ PATTERN = r"""
 """
 
 
-@configo.cache_large
+@configos.cache_large
 def parse_caption(text: str) -> tuple:
     """\
     >>> parse_caption('Tab. 4.2.: Wirkungsgrad der elektrischen Komponenten [Pfe14], [IAV15].')
@@ -44,7 +44,7 @@ def parse_caption(text: str) -> tuple:
 
 
 def compiles(caption: str):
-    return utila.compiles(PATTERN % caption)
+    return utilo.compiles(PATTERN % caption)
 
 
 CAPTIONS = r"""
@@ -57,7 +57,7 @@ Graph
 CAPTIONX = compiles(CAPTIONS)
 
 
-@configo.cache_large
+@configos.cache_large
 def iscaption(text: str) -> bool:
     """\
     >>> iscaption('Abbildung 4.2.: Softwareentwicklung Übersicht')
@@ -89,7 +89,7 @@ def iscaption(text: str) -> bool:
 FIGUREX = compiles(r'Abb.?|Abbildung|Fig.?|Figure|Graph')
 
 
-@configo.cache_large
+@configos.cache_large
 def iscaption_figure(text: str) -> bool:
     """\
     >>> iscaption_figure('Abbildung11.1 Entwicklungsstand der Proﬁle')
@@ -106,7 +106,7 @@ def iscaption_figure(text: str) -> bool:
 LISTINGX = compiles(r'Listing|Algorithmus')
 
 
-@configo.cache_large
+@configos.cache_large
 def iscaption_code(text: str) -> bool:
     """\
     >>> iscaption_code('Listing3.1:Bewertung von Tweets')
@@ -123,7 +123,7 @@ def iscaption_code(text: str) -> bool:
 TABLEX = compiles(r'Tab.?|Tabelle|Table')
 
 
-@configo.cache_large
+@configos.cache_large
 def iscaption_table(text: str) -> bool:
     """\
     >>> iscaption_table('Tab. 3: Mittelwerte und Standardabweichungen')

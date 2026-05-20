@@ -20,10 +20,10 @@ relict of old times. Arabic numbers are used for the whole document.
 
 import dataclasses
 
-import configo
+import configos
 import iamraw
 import iamraw.toc
-import utila
+import utilo
 
 import elements
 
@@ -66,10 +66,10 @@ def validate_pageorder(items) -> InvalidPages:
     roman = 'I'
     for pagenumber, title, raw_location in items:
         if pagenumber is None:
-            utila.error(f'missing {pagenumber} {title} {raw_location}')
+            utilo.error(f'missing {pagenumber} {title} {raw_location}')
             continue
         if raw_location is None:
-            utila.error(f'no `raw_location` for toc: `{title}`')
+            utilo.error(f'no `raw_location` for toc: `{title}`')
             raw_location = 0  # TODO: REMOVE LATER
         raw_location = int(raw_location)
         try:
@@ -85,7 +85,7 @@ def validate_pageorder(items) -> InvalidPages:
                     ))
             arabic = current_arabic
         except ValueError:
-            current_roman = utila.arabic(pagenumber)
+            current_roman = utilo.arabic(pagenumber)
             if current_roman is None:
                 # invalid roman number `ixx` correct is `xix`
                 result.append(
@@ -96,7 +96,7 @@ def validate_pageorder(items) -> InvalidPages:
                         raw_location=raw_location,
                     ))
                 continue
-            if current_roman < utila.arabic(roman):
+            if current_roman < utilo.arabic(roman):
                 result.append(
                     InvalidPage(
                         pagenumber,
@@ -108,7 +108,7 @@ def validate_pageorder(items) -> InvalidPages:
     return result
 
 
-@configo.cache_large
+@configos.cache_large
 def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
     """Determine if passed `number` is a page number.
 
@@ -150,7 +150,7 @@ def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
         if len(number) > 5:
             return False
         return True
-    if utila.isroman(number):
+    if utilo.isroman(number):
         return True
     if SEPARATED_PAGENUMBERS.match(number):
         return True
@@ -161,7 +161,7 @@ def ispagenumber(number: str) -> bool:  # pylint:disable=R0911
     return False
 
 
-COMPLEX_PAGENUMBER = utila.compiles(r"""
+COMPLEX_PAGENUMBER = utilo.compiles(r"""
     ^
     \d{0,3}             # TODO: WHY?
     [ ]{0,3}
@@ -190,7 +190,7 @@ COMPLEX_PAGENUMBER = utila.compiles(r"""
     )
 """)
 
-SEPARATED_PAGENUMBERS = utila.compiles(r'^\d{1,3}/\d{1,3}')
+SEPARATED_PAGENUMBERS = utilo.compiles(r'^\d{1,3}/\d{1,3}')
 
 
 def isnumber_withgaps(text: str, maxgaps: int = 1) -> bool:
